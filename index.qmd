@@ -1,0 +1,88 @@
+---
+title: "Clément Callaert"
+description: "Research on generative and world models under finite compute."
+page-layout: full
+toc: false
+---
+
+::: {.hero}
+::: {.hero-copy}
+## Generative and world models under finite compute
+
+I study generative and world models under finite compute, with a focus on
+rigorous evaluation, numerical behavior, and downstream decision-making.
+
+I am completing the Engineering Degree at CentraleSupélec, specializing in
+Mathematics and Data Science, alongside the Research Master's in Mathematics
+and Artificial Intelligence at Université Paris-Saclay. I also work as a
+Generative AI Engineer at MBDA on multi-agent systems built around large
+language models, after working as a Data Scientist at TotalEnergies' Digital
+Factory.
+
+[Explore the research](research.qmd){.btn .btn-primary}
+[Read technical notes](writing.qmd){.btn .btn-outline-primary}
+:::
+:::
+
+## Selected research
+
+::: {.project-grid}
+::: {.project-card}
+### Few-Step Field Regularity
+
+**Problem.** When a probability-flow ODE is solved with only a few function
+evaluations, does a smoother velocity field imply a smaller sampling error?
+
+**Result.** An exact one-dimensional Gaussian construction reverses the
+regularity and Heun error orderings at eight function evaluations; the broader
+finite benchmark contains both agreements and disagreements.
+
+**Status.** Research manuscript and reproducible software.
+
+[Code](https://github.com/clement-callaert/fewstep-field-regularity) ·
+[Manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf)
+:::
+
+::: {.project-card}
+### Ego-World JEPA
+
+**Problem.** Can a factored latent world model make model-predictive control
+more effective on PushT?
+
+**Result.** Strong in-slice state decodability did not produce a robust
+planning benefit: the apparent seed-0 factorization gap disappeared on the
+second seed.
+
+**Status.** Completed controlled project with a negative result.
+
+[Code and results](https://github.com/clement-callaert/ego-world-sub-jepa)
+:::
+
+::: {.project-card}
+### Adaptive Latent Search
+
+**Problem.** Can a learned stop-or-continue controller allocate latent-search
+compute better than fixed budgets and simple diagnostics?
+
+**Result.** In a small `pattern_2d` sandbox, the learned policy did not beat a
+gradient-norm stopping rule, despite an oracle gap that left room for adaptive
+allocation.
+
+**Status.** Exploratory extension of LPN; no ARC-AGI claim.
+
+[Research branch](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
+[Report](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
+:::
+:::
+
+## Working principles
+
+The projects on this site follow a simple standard: make the hypothesis
+testable, use controlled protocols and strong baselines, keep negative results,
+and state exactly where the evidence stops. Detailed questions, methods,
+limitations, and artifacts are collected on the [Research page](research.qmd).
+
+::: {.profile-links}
+[GitHub](https://github.com/clement-callaert) ·
+[LinkedIn](https://www.linkedin.com/in/clement-callaert)
+:::

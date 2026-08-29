@@ -1,0 +1,15 @@
+---
+title: "Writing"
+description: "Technical notes on generative modeling, world models, numerical evaluation, and research practice."
+page-layout: full
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+---
+
+Technical notes that make experiments easier to inspect: derivations,
+evaluation protocols, and research postmortems. The [Research page](research.qmd)
+collects the corresponding code, reports, and project-level limitations.

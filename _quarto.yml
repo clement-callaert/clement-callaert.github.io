@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "posts/*.qmd"
+
+website:
+  title: "Clément Callaert"
+  site-url: "https://clement-callaert.github.io"
+  description: "Research on generative and world models under finite compute."
+  search:
+    location: navbar
+    type: overlay
+  open-graph: true
+  twitter-card: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research.qmd
+        text: Research
+      - href: writing.qmd
+        text: Writing
+      - href: cv.qmd
+        text: CV
+      - href: about.qmd
+        text: About
+    tools:
+      - icon: github
+        href: "https://github.com/clement-callaert"
+        aria-label: GitHub
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/clement-callaert"
+        aria-label: LinkedIn
+  page-footer:
+    left: "© 2026 Clément Callaert"
+    right: "Built with [Quarto](https://quarto.org/)"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    anchor-sections: true
+    link-external-icon: true
+    link-external-newwindow: true
+
+lang: en

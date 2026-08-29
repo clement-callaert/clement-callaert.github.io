@@ -1,0 +1,93 @@
+---
+title: "A Probe Is Not a Planner"
+description: "What a small PushT experiment says—and does not say—about latent-state decodability and closed-loop control."
+date: 2026-08-29
+categories:
+  - World models
+  - Evaluation
+  - Negative results
+---
+
+A latent representation can make state variables easy to recover without being
+useful to a controller. That distinction sounds obvious, but it is easy to lose
+when a probe score is the cleanest number in an experiment.
+
+The public [Ego-World JEPA](https://github.com/clement-callaert/ego-world-sub-jepa)
+project provides a small controlled example. It compares factored and
+monolithic action-conditioned latent world models on PushT. Both variants use
+the same detector and MPPI controller; the main pair changes the latent
+factorization while keeping the downstream evaluation protocol fixed.
+
+## The attractive hypothesis
+
+Suppose a linear probe can recover task-relevant state from a latent with an
+$R^2$ close to one. It is tempting to read that as evidence that the latent
+contains what planning needs. A factored representation may make the story even
+more appealing: separate object-relevant components, decode state cleanly, and
+plan more effectively.
+
+That chain contains a hidden jump. A probe asks whether information can be
+decoded on the sampled evaluation slice. A planner needs a model whose rollouts
+remain accurate under candidate action sequences, preserve the right geometry
+over a horizon, and induce a useful cost landscape. These are different tests.
+
+## The controlled comparison
+
+The main comparison evaluates 50 planning episodes for each representation and
+training seed. MPPI uses 512 samples, six optimization iterations, and an
+eight-step horizon.
+
+| Model | Training seed | Probe $R^2$ | Planning successes |
+|---|---:|---:|---:|
+| Factored | 0 | 0.997 | 6 / 50 |
+| Monolithic | 0 | 0.992 | 2 / 50 |
+| Factored | 1 | 0.996 | 2 / 50 |
+| Monolithic | 1 | 0.993 | 2 / 50 |
+
+Seed 0 appears to favor the factored model, but the reported Fisher test does
+not support that difference ($p=0.269$), and the gap disappears on seed 1. The
+result does not prove that the models are equivalent—two seeds and low success
+counts are far too weak for that claim. It does show that near-perfect in-slice
+decodability was not sufficient for a robust planning improvement in this
+setup.
+
+The broader 13-run screening set points in the same cautious direction. The
+reported Spearman association between probe $R^2$ and planning success is
+$\rho=0.273$ with $p=0.367$. This is a small, incomplete grid, so the absence of
+a significant association is not evidence of a universal absence. It is a
+reason not to promote the probe into a planning metric.
+
+## What the probe leaves unresolved
+
+Three limitations matter when interpreting the high $R^2$ values.
+
+First, the probe is evaluated in-slice rather than on a genuinely held-out
+distribution. Second, auxiliary supervision is directly aligned with some of
+the decoded properties, so a high score partly verifies that the auxiliary task
+worked. Third, a one-step readout does not test multi-step rollout behavior or
+closed-loop distribution shift.
+
+A planning-oriented representation evaluation therefore needs several layers:
+
+1. **Decodability:** is task-relevant state recoverable at all?
+2. **Dynamics:** do predicted displacements and action effects remain accurate
+   over the planning horizon?
+3. **Control:** does the representation improve closed-loop success under a
+   shared controller and compute budget?
+4. **Stability:** does the conclusion survive training seeds and reasonable
+   protocol changes?
+
+Each layer can falsify a stronger claim made from the previous one. Passing the
+first layer is useful evidence, but not a shortcut through the remaining three.
+
+## The useful negative result
+
+The experiment's value is not that factorization failed once. It is that a
+plausible representation story was separated into measurable links, and the
+link from easy probing to robust control did not survive the controlled test.
+That narrows the next question: evaluate representations through rollout and
+decision quality, not only through static recoverability.
+
+The complete metrics, seeds, and caveats are available in the
+[multiseed statistics](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/grid/stats_corrected_multiseed.json)
+and the project's [results manifest](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json).

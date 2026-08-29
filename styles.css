@@ -1,0 +1,153 @@
+:root {
+  --cc-ink: #17232d;
+  --cc-muted: #56636d;
+  --cc-accent: #205d66;
+  --cc-accent-dark: #16444b;
+  --cc-rule: #dbe2e5;
+  --cc-soft: #f4f7f7;
+}
+
+body {
+  color: var(--cc-ink);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--cc-rule);
+}
+
+.navbar-brand {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--cc-ink);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 2.6rem;
+  font-weight: 650;
+}
+
+a {
+  color: var(--cc-accent);
+  text-underline-offset: 0.16em;
+}
+
+a:hover,
+a:focus {
+  color: var(--cc-accent-dark);
+}
+
+.hero {
+  background: var(--cc-soft);
+  border-bottom: 1px solid var(--cc-rule);
+  margin: -1.5rem calc(50% - 50vw) 3.25rem;
+  padding: clamp(3.5rem, 8vw, 7rem) max(1.5rem, calc((100vw - 1140px) / 2));
+}
+
+.hero-copy {
+  max-width: 850px;
+}
+
+.hero h2 {
+  font-size: clamp(2.15rem, 5vw, 4rem);
+  line-height: 1.08;
+  margin: 0 0 1.5rem;
+  max-width: 18ch;
+}
+
+.hero p {
+  color: var(--cc-muted);
+  font-size: clamp(1.04rem, 2vw, 1.22rem);
+  max-width: 72ch;
+}
+
+.hero .btn {
+  margin: 0.7rem 0.45rem 0 0;
+}
+
+.btn-primary {
+  background-color: var(--cc-accent);
+  border-color: var(--cc-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--cc-accent-dark);
+  border-color: var(--cc-accent-dark);
+}
+
+.btn-outline-primary {
+  border-color: var(--cc-accent);
+  color: var(--cc-accent);
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.5rem 0 3rem;
+}
+
+.project-card {
+  border: 1px solid var(--cc-rule);
+  border-radius: 0.35rem;
+  padding: 1.35rem 1.4rem;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+.project-card p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-links {
+  border-top: 1px solid var(--cc-rule);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+}
+
+#quarto-content main.content {
+  max-width: 850px;
+}
+
+.page-layout-full #quarto-content main.content {
+  max-width: 1140px;
+}
+
+footer.footer {
+  border-top: 1px solid var(--cc-rule);
+}
+
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

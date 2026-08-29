@@ -1,0 +1,60 @@
+---
+title: "CV"
+description: "Education, experience, research projects, and selected responsibilities."
+---
+
+## Education
+
+**Université Paris-Saclay** — Research Master's (M2), Mathematics and
+Artificial Intelligence, 2025–2026
+
+**CentraleSupélec** — Engineering Degree, specialization in Mathematics and
+Data Science, 2023–2026
+
+**Beihang University** — Academic exchange, 2025
+
+**La Martinière Monplaisir** — Preparatory classes in mathematics and physics,
+2021–2023
+
+## Experience
+
+**MBDA** — Generative AI Engineer, apprenticeship, September 2025–present
+
+Work on multi-agent systems built around large language models. Non-public
+technical details are intentionally excluded from this site.
+
+**TotalEnergies Digital Factory** — Data Scientist, apprenticeship,
+November 2023–September 2025
+
+## Selected research and projects
+
+- **Few-Step Field Regularity:** exact Gaussian analysis of probability paths,
+  field regularity, and finite-step numerical error.
+- **Ego-World JEPA:** action-conditioned latent world models and MPPI planning
+  on PushT, with a documented negative result.
+- **Adaptive Latent Search:** learned and heuristic stopping rules for
+  compute allocation during latent optimization.
+- **Decision Transformer for LOB trading:** five-seed offline-RL benchmark on
+  FI-2010, co-developed with Côme Genet.
+- **Proximal Diffusion Models:** PyTorch reproduction of published proximal
+  diffusion methods.
+
+See [Research](research.qmd) for questions, exact results, limitations, and
+public artifacts.
+
+## Technical focus
+
+Generative modeling; flow matching and diffusion; latent world models;
+reinforcement learning and planning; numerical evaluation; reproducible
+experimentation in Python and PyTorch.
+
+## Teaching and service
+
+- Delivered practical artificial-intelligence workshops with Automatants.
+- Led a six-person infrastructure team as president of Rézo Metz-Rennes
+  Fédérés.
+
+## Public profiles
+
+[GitHub](https://github.com/clement-callaert) ·
+[LinkedIn](https://www.linkedin.com/in/clement-callaert)

@@ -1,0 +1,12 @@
+.private/
+private/
+.quarto/
+_site/
+
+# Local preview and editor state
+.DS_Store
+.vscode/
+
+
+/.quarto/
+**/*.quarto_ipynb
