@@ -37,6 +37,7 @@ format:
     theme: theme.scss
     css: styles.css
     toc: false
+    highlight-style: none
     anchor-sections: true
     link-external-icon: false
     link-external-newwindow: false
