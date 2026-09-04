@@ -5,232 +5,52 @@ description: "Research on generative and world models under finite compute."
 toc: false
 ---
 
-::: {.home-hero}
-::: {.home-hero__main}
-::: {.eyebrow}
-Machine learning research · Paris
-:::
-
-# Clément Callaert
-
-::: {.hero-statement}
-Generative and world models under finite compute.
-:::
-
-::: {.hero-summary}
 I study how probability paths, learned dynamics, numerical solvers, and
 inference-time computation affect prediction and decision-making—with an
 emphasis on controlled experiments and conclusions that hold up against
 strong baselines.
-:::
 
-::: {.hero-actions}
-[Explore the research](research.qmd){.button .button--primary}
-[Read technical notes](writing.qmd){.button .button--quiet}
-:::
-
-::: {.hero-social}
-[GitHub](https://github.com/clement-callaert)
+[Explore the research](research.qmd) ·
+[Read technical notes](writing.qmd) ·
+[GitHub](https://github.com/clement-callaert) ·
 [LinkedIn](https://www.linkedin.com/in/clement-callaert)
-:::
-:::
 
-::: {.home-hero__aside}
-::: {.aside-heading}
-Research coordinates
-:::
-
-::: {.focus-list}
-::: {.focus-item}
-<span>01</span>
-
-**Generative dynamics**
-
-Diffusion, flow matching, probability paths
-:::
-
-::: {.focus-item}
-<span>02</span>
-
-**Latent world models**
-
-Representation, prediction, planning and control
-:::
-
-::: {.focus-item}
-<span>03</span>
-
-**Finite-compute evaluation**
-
-Numerical behavior, baselines, compute allocation
-:::
-:::
-
-::: {.current-note}
-::: {.current-note__label}
-Currently
-:::
-
-CentraleSupélec · Université Paris-Saclay<br>
-Generative AI Engineer, MBDA
-:::
-:::
-:::
-
-::: {.home-section}
-::: {.section-intro}
-::: {.eyebrow}
-Selected research
-:::
-
-## Three hypotheses, stress-tested
-
-The common thread is methodological: isolate a claim, test it under a fixed
-compute budget, and keep the negative result when the evidence does not
-support the original story.
-:::
-
-::: {.project-grid}
-::: {.project-card}
-::: {.project-card__topline}
-<span class="project-number">01</span>
-<span class="status-chip">Manuscript</span>
-:::
+## Selected research
 
 ### Few-Step Field Regularity
 
-::: {.project-question}
 Can averaged field regularity rank probability paths when a flow ODE is solved
 with only a few function evaluations?
-:::
-
-::: {.project-finding}
-**Finding**
 
 An exact one-dimensional Gaussian construction reverses the regularity and
 Heun error orderings at eight function evaluations.
-:::
 
-::: {.project-links}
-[Repository](https://github.com/clement-callaert/fewstep-field-regularity)
+[Repository](https://github.com/clement-callaert/fewstep-field-regularity) ·
 [Manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf)
-:::
-:::
-
-::: {.project-card}
-::: {.project-card__topline}
-<span class="project-number">02</span>
-<span class="status-chip status-chip--negative">Negative result</span>
-:::
 
 ### Ego-World JEPA
 
-::: {.project-question}
 Does a factored latent world model make model-predictive control more effective
 on PushT?
-:::
-
-::: {.project-finding}
-**Finding**
 
 Strong in-slice decodability did not produce a robust planning benefit; the
 apparent seed-0 gap disappeared on the second seed.
-:::
 
-::: {.project-links}
 [Repository & results](https://github.com/clement-callaert/ego-world-sub-jepa)
-:::
-:::
-
-::: {.project-card}
-::: {.project-card__topline}
-<span class="project-number">03</span>
-<span class="status-chip status-chip--exploration">Exploration</span>
-:::
 
 ### Adaptive Latent Search
 
-::: {.project-question}
 Can a learned stop-or-continue controller allocate latent-search compute better
 than fixed budgets and simple diagnostics?
-:::
-
-::: {.project-finding}
-**Finding**
 
 In a small `pattern_2d` sandbox, the learned controller did not beat a
 gradient-norm stopping rule despite a substantial oracle gap.
-:::
 
-::: {.project-links}
-[Research branch](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search)
+[Research branch](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
 [Report](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
-:::
-:::
-:::
 
-::: {.section-cta}
-[See questions, protocols, exact results, and limitations](research.qmd)
-:::
-:::
+## Background
 
-::: {.method-band}
-::: {.method-band__intro}
-::: {.eyebrow .eyebrow--light}
-Research practice
-:::
-
-## Evidence before narrative
-
-I want each public artifact to stay useful even when its original hypothesis
-does not hold.
-:::
-
-::: {.method-grid}
-::: {.method-step}
-<span>01</span>
-
-**Specify**
-
-Turn an appealing hypothesis into a falsifiable protocol.
-:::
-
-::: {.method-step}
-<span>02</span>
-
-**Compare**
-
-Use strong baselines and equal, explicit compute budgets.
-:::
-
-::: {.method-step}
-<span>03</span>
-
-**Diagnose**
-
-Inspect numerical behavior, seed sensitivity, and failure modes.
-:::
-
-::: {.method-step}
-<span>04</span>
-
-**Bound**
-
-State exactly where the conclusion stops generalizing.
-:::
-:::
-:::
-
-::: {.home-about}
-::: {.home-about__title}
-::: {.eyebrow}
-Background
-:::
-
-## Engineering, mathematics, and research
-:::
-
-::: {.home-about__copy}
 I am completing the Engineering Degree at CentraleSupélec, specializing in
 Mathematics and Data Science, alongside the Research Master's in Mathematics
 and Artificial Intelligence at Université Paris-Saclay. I also work as a
@@ -239,5 +59,3 @@ language models, following a Data Scientist apprenticeship at TotalEnergies'
 Digital Factory.
 
 [More about my background](about.qmd) · [Concise CV](cv.qmd)
-:::
-:::
