@@ -42,6 +42,7 @@ format:
     css: styles.css
     toc: false
     highlight-style: none
+    include-after-body: _partials/end-mark.html
     anchor-sections: true
     link-external-icon: false
     link-external-newwindow: false

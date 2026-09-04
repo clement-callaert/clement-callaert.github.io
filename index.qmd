@@ -47,3 +47,9 @@ in full.]{.muted}
 
 [Notes on evaluation under a fixed budget](notes/evaluation-under-budget.qmd)
 [updated September 2026]{.muted}
+
+::: {.colophon}
+Set in Source Serif 4. Built with Quarto;
+[source](https://github.com/clement-callaert/clement-callaert.github.io).
+Every experiment described here was run on one consumer GPU.
+:::
