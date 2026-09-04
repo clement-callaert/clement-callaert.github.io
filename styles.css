@@ -103,6 +103,14 @@ p {
   font-size: 16px;
 }
 
+.portrait {
+  display: block;
+  height: 160px;
+  margin-bottom: 1.8rem;
+  object-fit: cover;
+  width: 160px;
+}
+
 /* Navigation */
 
 .navbar {

@@ -1,5 +1,4 @@
 ---
-title: "Clément Callaert"
 pagetitle: "Clément Callaert"
 toc: false
 listing:
@@ -11,6 +10,10 @@ listing:
     categories: false
     feed: false
 ---
+
+![](assets/portrait.jpg){.portrait fig-alt="Clément Callaert"}
+
+# Clément Callaert
 
 MSc, CentraleSupélec · M2 Mathematics and AI, Université Paris-Saclay\
 Until September 2026: apprentice AI engineer, MBDA
