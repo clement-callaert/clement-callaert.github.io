@@ -5,29 +5,72 @@ description: "Education, experience, research projects, and selected responsibil
 
 ## Education
 
-**Université Paris-Saclay** — Research Master's (M2), Mathematics and
-Artificial Intelligence, 2025–2026
+::: {.cv-list}
+::: {.cv-item}
+::: {.cv-item__head}
+**Université Paris-Saclay**
+<span>2025–2026</span>
+:::
 
-**CentraleSupélec** — Engineering Degree, specialization in Mathematics and
-Data Science, 2023–2026
+Research Master's (M2), Mathematics and Artificial Intelligence
+:::
 
-**Beihang University** — Academic exchange, 2025
+::: {.cv-item}
+::: {.cv-item__head}
+**CentraleSupélec**
+<span>2023–2026</span>
+:::
 
-**La Martinière Monplaisir** — Preparatory classes in mathematics and physics,
-2021–2023
+Engineering Degree, specialization in Mathematics and Data Science
+:::
+
+::: {.cv-item}
+::: {.cv-item__head}
+**Beihang University**
+<span>2025</span>
+:::
+
+Academic exchange
+:::
+
+::: {.cv-item}
+::: {.cv-item__head}
+**La Martinière Monplaisir**
+<span>2021–2023</span>
+:::
+
+Preparatory classes in mathematics and physics
+:::
+:::
 
 ## Experience
 
-**MBDA** — Generative AI Engineer, apprenticeship, September 2025–present
+::: {.cv-list}
+::: {.cv-item}
+::: {.cv-item__head}
+**MBDA**
+<span>Sep. 2025–present</span>
+:::
+
+*Generative AI Engineer · Apprenticeship*
 
 Work on multi-agent systems built around large language models. Non-public
 technical details are intentionally excluded from this site.
+:::
 
-**TotalEnergies Digital Factory** — Data Scientist, apprenticeship,
-November 2023–September 2025
+::: {.cv-item}
+::: {.cv-item__head}
+**TotalEnergies Digital Factory**
+<span>Nov. 2023–Sep. 2025</span>
+:::
+
+*Data Scientist · Apprenticeship*
+:::
+:::
 
 ## Selected research and projects
 
+::: {.cv-projects}
 - **Few-Step Field Regularity:** exact Gaussian analysis of probability paths,
   field regularity, and finite-step numerical error.
 - **Ego-World JEPA:** action-conditioned latent world models and MPPI planning
@@ -38,21 +81,24 @@ November 2023–September 2025
   FI-2010, co-developed with Côme Genet.
 - **Proximal Diffusion Models:** PyTorch reproduction of published proximal
   diffusion methods.
+:::
 
 See [Research](research.qmd) for questions, exact results, limitations, and
 public artifacts.
 
 ## Technical focus
 
+::: {.technical-focus}
 Generative modeling; flow matching and diffusion; latent world models;
 reinforcement learning and planning; numerical evaluation; reproducible
 experimentation in Python and PyTorch.
+:::
 
 ## Teaching and service
 
 - Delivered practical artificial-intelligence workshops with Automatants.
-- Led a six-person infrastructure team as president of Rézo Metz-Rennes
-  Fédérés.
+- Led a six-person team running network infrastructure for 450+ members as
+  president of Rézo Metz-Rennes Fédérés.
 
 ## Public profiles
 

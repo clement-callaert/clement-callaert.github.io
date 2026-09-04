@@ -10,6 +10,8 @@ listing:
   feed: true
 ---
 
+::: {.page-lead}
 Technical notes that make experiments easier to inspect: derivations,
 evaluation protocols, and research postmortems. The [Research page](research.qmd)
 collects the corresponding code, reports, and project-level limitations.
+:::

@@ -9,12 +9,16 @@ website:
   title: "Clément Callaert"
   site-url: "https://clement-callaert.github.io"
   description: "Research on generative and world models under finite compute."
+  favicon: assets/mark.svg
   search:
     location: navbar
     type: overlay
   open-graph: true
   twitter-card: true
   navbar:
+    logo: assets/mark.svg
+    logo-alt: "Clément Callaert"
+    collapse-below: lg
     left:
       - href: index.qmd
         text: Home
@@ -34,12 +38,13 @@ website:
         href: "https://www.linkedin.com/in/clement-callaert"
         aria-label: LinkedIn
   page-footer:
-    left: "© 2026 Clément Callaert"
+    left: "© 2026 Clément Callaert · Machine learning research"
+    center: "Generative models · World models · Finite compute"
     right: "Built with [Quarto](https://quarto.org/)"
 
 format:
   html:
-    theme: cosmo
+    theme: litera
     css: styles.css
     toc: true
     anchor-sections: true

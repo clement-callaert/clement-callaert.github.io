@@ -3,11 +3,14 @@ title: "Research"
 description: "Questions, methods, results, limitations, and public artifacts."
 ---
 
+::: {.page-lead}
 My current public work centers on generative models, latent world models,
 planning, and compute allocation. I treat evaluation design as part of the
 research contribution: a useful result should remain understandable when the
 headline hypothesis fails.
+:::
 
+::: {.research-project}
 ## Few-Step Field Regularity
 
 **Question.** Probability paths change the velocity field learned by flow
@@ -16,10 +19,11 @@ Jacobian regularity reliably imply lower numerical sampling error?
 
 **Method.** The project uses commuting Gaussian probability-flow ODEs, where
 the dynamics and Gaussian $W_2$ endpoint error are available exactly. It pairs
-a certified scalar construction with a frozen 36-block comparison of linear
+a closed-form scalar construction with a frozen 36-block comparison of linear
 and trigonometric variance-preserving paths under equal-NFE Euler, Heun, and
 RK4 solvers; selected settings also compare four candidate paths.
 
+::: {.finding}
 **Main result.** For the transport
 $\mathcal{N}(0,1)\rightarrow\mathcal{N}(0,4)$, averaged regularity prefers a
 trigonometric variance-preserving path, while Heun at NFE 8 gives lower
@@ -27,18 +31,27 @@ $W_2$ error to the linear path. In the specified finite benchmark, 14 of 36
 path comparisons reverse the two orderings. This is evidence that averaged
 regularity is not, by itself, a reliable ordering surrogate under finite
 discretization.
+:::
 
-**Limits.** The certified claims concern exact Gaussian systems, not learned
+::: {.limits}
+**Limits.** The closed-form claims concern exact Gaussian systems, not learned
 neural velocity fields. The 14-of-36 count describes one finite registered
 grid, not a population failure rate or a general theorem about flow matching.
+:::
 
+::: {.project-status}
 **Status.** Public research manuscript and reproducible software. No venue
 acceptance or public archival publication is claimed here.
+:::
 
+::: {.research-links}
 [Repository](https://github.com/clement-callaert/fewstep-field-regularity) ·
 [Manuscript PDF](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf) ·
 [Claim and evidence audit](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/audit/CLAIM_EVIDENCE_MATRIX.md)
+:::
+:::
 
+::: {.research-project}
 ## Ego-World JEPA
 
 **Question.** Does factorizing an action-conditioned latent world model into
@@ -51,6 +64,7 @@ pair was evaluated with 50 planning episodes per seed, 512 MPPI samples, six
 optimization iterations, and an eight-step horizon. Both use the same detector
 and controller.
 
+::: {.finding}
 **Main result.** On seed 0, the factored model combined an in-slice probe
 $R^2=0.997$ with 6/50 planning successes, versus $R^2=0.992$ and 2/50 for the
 monolithic model. On seed 1, both reached 2/50. The seed-0 planning difference
@@ -58,19 +72,28 @@ was not significant under the reported Fisher test ($p=0.269$), and the
 apparent factorization advantage did not replicate. High probe decodability
 was therefore insufficient evidence of a planning-useful representation in
 this setup.
+:::
 
+::: {.limits}
 **Limits.** The primary comparison has two seeds, the probe is in-slice and
 partly aligned with auxiliary supervision, and success rates remain low across
 the grid. The experiment covers one PushT setup and does not establish a broad
 claim about JEPA representations or model-predictive control.
+:::
 
+::: {.project-status}
 **Status.** Completed and frozen controlled project; the central outcome is a
 negative result.
+:::
 
+::: {.research-links}
 [Repository](https://github.com/clement-callaert/ego-world-sub-jepa) ·
 [Results manifest](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json) ·
 [Multiseed statistics](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/grid/stats_corrected_multiseed.json)
+:::
+:::
 
+::: {.research-project}
 ## LPN / Adaptive Latent Search
 
 **Question.** During latent optimization, can a learned stop-or-continue
@@ -82,26 +105,37 @@ and are evaluated on a held-out third checkpoint. Fixed-step rules, hand-built
 stopping heuristics, a learned controller, and a non-deployable oracle are
 compared over the same five-step horizon.
 
+::: {.finding}
 **Main result.** The learned zero-penalty policy reached 0.90625 exact match at
 4.281 mean steps. A gradient-norm rule reached the same exact match at 3.438
 steps; the oracle reached it at 0.562 mean steps. The oracle gap shows that
 adaptive allocation could matter, but the learned policy did not outperform
 the strongest simple heuristic. The experiment motivates better stopping
 observations and estimators rather than a performance claim.
+:::
 
+::: {.limits}
 **Limits.** These results come from a small in-family `pattern_2d` task, one
 held-out checkpoint, 96 correlated leave-one-out episodes, and limited policy
 seed analysis. They are not ARC-AGI results and do not establish out-of-domain
 generalization.
+:::
 
+::: {.project-status}
 **Status.** Exploratory extension and documented negative result.
+:::
 
+::: {.research-links}
 [Research branch](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
 [Research README](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/README_RESEARCH.md) ·
 [Report PDF](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
+:::
+:::
 
 ## Secondary projects
 
+::: {.secondary-grid}
+::: {.secondary-card}
 ### Learned niche selection for sycophancy probing
 
 An adaptation of ACES to a grounded 12-cell sycophancy-probing domain. Over
@@ -113,7 +147,9 @@ With only two seeds, this is a diagnostic case study, not an inferential or
 publication claim.
 
 [Repository and report](https://github.com/clement-callaert/aces-sycophancy)
+:::
 
+::: {.secondary-card}
 ### Proximal Diffusion Models in PyTorch
 
 A from-scratch course reproduction of the proximal diffusion framework on
@@ -122,7 +158,9 @@ proximal samplers, tests, configuration, and an FID-versus-NFE evaluation
 pipeline. This is an implementation of published work, not an original paper.
 
 [Repository](https://github.com/clement-callaert/proximal-diffusion-models-pytorch)
+:::
 
+::: {.secondary-card}
 ### Decision Transformer for limit-order-book trading
 
 A reproducible offline-RL benchmark co-developed with Côme Genet on FI-2010.
@@ -132,3 +170,5 @@ reported units are normalized feature-space PnL, and the dataset does not model
 spread, latency, queue position, or market impact.
 
 [Repository](https://github.com/clement-callaert/Decision-Transformer-LOB-Trading)
+:::
+:::

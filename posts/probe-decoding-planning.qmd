@@ -18,7 +18,7 @@ monolithic action-conditioned latent world models on PushT. Both variants use
 the same detector and MPPI controller; the main pair changes the latent
 factorization while keeping the downstream evaluation protocol fixed.
 
-## The attractive hypothesis
+## The appealing hypothesis
 
 Suppose a linear probe can recover task-relevant state from a latent with an
 $R^2$ close to one. It is tempting to read that as evidence that the latent
