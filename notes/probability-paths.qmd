@@ -1,0 +1,27 @@
+---
+title: "Notes on probability paths"
+pagetitle: "Notes on probability paths"
+---
+
+::: {.updated}
+Last updated: September 2026
+:::
+
+## Regularity is not a reliable ordering surrogate at low NFE
+
+Probability paths change the velocity field learned by flow matching. At a fixed
+number of function evaluations (NFE), does lower averaged Jacobian regularity
+reliably imply lower numerical sampling error?
+
+For the transport $\mathcal{N}(0,1)\rightarrow\mathcal{N}(0,4)$, averaged
+regularity prefers a trigonometric variance-preserving path, while Heun at NFE 8
+gives lower $W_2$ error to the linear path. In the specified finite benchmark,
+14 of 36 path comparisons reverse the two orderings.
+
+**Limits.** The closed-form claims concern exact Gaussian systems, not learned
+neural velocity fields. The 14-of-36 count describes one finite registered grid,
+not a population failure rate or a general theorem about flow matching.
+
+[code](https://github.com/clement-callaert/fewstep-field-regularity) ·
+[manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf) ·
+[audit](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/audit/CLAIM_EVIDENCE_MATRIX.md)

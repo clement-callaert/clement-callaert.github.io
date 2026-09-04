@@ -1,14 +1,6 @@
 ---
 pagetitle: "Clément Callaert"
 toc: false
-listing:
-  - id: notes
-    contents: posts
-    type: default
-    sort: "date desc"
-    fields: [date, title, description]
-    categories: false
-    feed: false
 ---
 
 ![](assets/portrait.jpg){.portrait fig-alt="Clément Callaert"}
@@ -62,5 +54,11 @@ is.
 
 ## Notes
 
-::: {#notes}
-:::
+[Notes on probability paths](notes/probability-paths.qmd)
+[updated September 2026]{.updated}
+
+[Notes on latent world models and planning](notes/world-models-and-planning.qmd)
+[updated September 2026]{.updated}
+
+[Notes on evaluation under a fixed budget](notes/evaluation-under-budget.qmd)
+[updated September 2026]{.updated}

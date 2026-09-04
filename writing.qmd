@@ -1,17 +1,15 @@
 ---
 title: "Notes"
-description: "Technical notes on generative modeling, world models, numerical evaluation, and research practice."
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  fields: [date, title, description]
-  categories: false
-  feed: true
+pagetitle: "Notes"
 ---
 
-::: {.page-lead}
-Technical notes that make experiments easier to inspect: derivations,
-evaluation protocols, and research postmortems. The [Research page](research.qmd)
-collects the corresponding code, reports, and project-level limitations.
-:::
+Working notes, updated as I go. They are not surveys.
+
+[Notes on probability paths](notes/probability-paths.qmd)
+[updated September 2026]{.updated}
+
+[Notes on latent world models and planning](notes/world-models-and-planning.qmd)
+[updated September 2026]{.updated}
+
+[Notes on evaluation under a fixed budget](notes/evaluation-under-budget.qmd)
+[updated September 2026]{.updated}

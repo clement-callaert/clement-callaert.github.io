@@ -1,12 +1,13 @@
 ---
-title: "A Probe Is Not a Planner"
-description: "What a small PushT experiment says—and does not say—about latent-state decodability and closed-loop control."
-date: 2026-08-29
-categories:
-  - World models
-  - Evaluation
-  - Negative results
+title: "Notes on latent world models and planning"
+pagetitle: "Notes on latent world models and planning"
 ---
+
+::: {.updated}
+Last updated: September 2026
+:::
+
+## A probe is not a planner
 
 A latent representation can make state variables easy to recover without being
 useful to a controller. That distinction sounds obvious, but it is easy to lose
@@ -18,7 +19,7 @@ monolithic action-conditioned latent world models on PushT. Both variants use
 the same detector and MPPI controller; the main pair changes the latent
 factorization while keeping the downstream evaluation protocol fixed.
 
-## The appealing hypothesis
+### The appealing hypothesis
 
 Suppose a linear probe can recover task-relevant state from a latent with an
 $R^2$ close to one. It is tempting to read that as evidence that the latent
@@ -31,7 +32,7 @@ decoded on the sampled evaluation slice. A planner needs a model whose rollouts
 remain accurate under candidate action sequences, preserve the right geometry
 over a horizon, and induce a useful cost landscape. These are different tests.
 
-## The controlled comparison
+### The controlled comparison
 
 The main comparison evaluates 50 planning episodes for each representation and
 training seed. MPPI uses 512 samples, six optimization iterations, and an
@@ -57,7 +58,7 @@ $\rho=0.273$ with $p=0.367$. This is a small, incomplete grid, so the absence of
 a significant association is not evidence of a universal absence. It is a
 reason not to promote the probe into a planning metric.
 
-## What the probe leaves unresolved
+### What the probe leaves unresolved
 
 Three limitations matter when interpreting the high $R^2$ values.
 
@@ -80,7 +81,7 @@ A planning-oriented representation evaluation therefore needs several layers:
 Each layer can falsify a stronger claim made from the previous one. Passing the
 first layer is useful evidence, but not a shortcut through the remaining three.
 
-## The useful negative result
+### The useful negative result
 
 The experiment's value is not that factorization failed once. It is that a
 plausible representation story was separated into measurable links, and the

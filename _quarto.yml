@@ -3,7 +3,11 @@ project:
   output-dir: _site
   render:
     - "*.qmd"
-    - "posts/*.qmd"
+    - "notes/*.qmd"
+  resources:
+    # Redirect stub for the note's old URL. Quarto does not copy stray .html
+    # files unless they are declared as a resource.
+    - "posts/probe-decoding-planning.html"
 
 website:
   title: "Clément Callaert"

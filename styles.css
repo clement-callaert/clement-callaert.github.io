@@ -60,6 +60,9 @@ code {
   max-width: 680px;
   padding-bottom: 6rem;
   padding-top: 3rem;
+  /* Auto margins make a grid item shrink to fit its content, which narrows
+     short pages; width: 100% holds the column at 680px on every page. */
+  width: 100%;
 }
 
 /* Headings. The rule under a section heading is the only decoration on the
@@ -206,48 +209,11 @@ p {
   margin: 0.15rem 0 0;
 }
 
-/* Notes listing: date, then title as a link, then one muted line. */
+/* Notes: the standing pages carry an updated line, not a date. */
 
-div.quarto-post,
-div.quarto-post.image-left,
-div.quarto-post.image-right {
-  border-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  margin-bottom: 1.7rem;
-  padding-bottom: 0;
-}
-
-div.quarto-post.image-right .metadata,
-div.quarto-post .metadata {
-  flex-basis: auto;
-  margin: 0;
-  order: 0;
-  padding: 0;
-}
-
-div.quarto-post.image-right .body,
-div.quarto-post .body {
-  flex-basis: auto;
-  order: 1;
-}
-
-div.quarto-post .listing-title {
-  font-size: 17px;
-  margin: 0;
-}
-
-div.quarto-post .listing-title a {
-  color: var(--accent);
-}
-
-div.quarto-post .listing-date,
-div.quarto-post .listing-description,
-div.quarto-post .listing-description p {
+.updated {
   color: var(--muted);
   font-size: 16px;
-  margin: 0;
 }
 
 /* Typography normalisation: Bootstrap and Quarto defaults that fall outside
@@ -264,25 +230,13 @@ th {
 #title-block-header.quarto-title-block.default .description .block-title,
 #title-block-header.quarto-title-block.default .abstract .block-title,
 #title-block-header.quarto-title-block.default .keywords .block-title,
-div.quarto-post .metadata,
-div.quarto-post .listing-categories .listing-category,
-.quarto-title .quarto-categories .quarto-category,
-.quarto-grid-item .listing-categories .listing-category,
-.quarto-grid-item .card-attribution,
-.quarto-listing-category,
-.quarto-listing-category .category,
-.listing-date,
-.listing-author {
-  font-size: 16px;
-  text-transform: none;
-}
-
-.quarto-title .quarto-categories .quarto-category,
-div.quarto-post .listing-categories .listing-category {
+.quarto-title .quarto-categories .quarto-category {
   border: 0;
   border-radius: 0;
+  font-size: 16px;
   opacity: 1;
   padding: 0 0.75em 0 0;
+  text-transform: none;
 }
 
 table,

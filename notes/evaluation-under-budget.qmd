@@ -1,0 +1,34 @@
+---
+title: "Notes on evaluation under a fixed budget"
+pagetitle: "Notes on evaluation under a fixed budget"
+---
+
+::: {.updated}
+Last updated: September 2026
+:::
+
+## Equal budgets
+
+A comparison between solvers or paths only means something when the compute is
+held fixed. The few-step work pairs a closed-form scalar construction with a
+frozen 36-block comparison of linear and trigonometric variance-preserving paths
+under equal-NFE Euler, Heun, and RK4 solvers.
+
+## Spending steps where they help
+
+During latent optimization, can a learned stop-or-continue policy spend
+additional steps only where they are useful?
+
+The learned zero-penalty policy reached 0.90625 exact match at 4.281 mean steps.
+A gradient-norm rule reached the same exact match at 3.438 steps; the oracle
+reached it at 0.562 mean steps. The oracle gap shows that adaptive allocation
+could matter, but the learned policy did not outperform the strongest simple
+heuristic.
+
+**Limits.** These results come from a small in-family `pattern_2d` task, one
+held-out checkpoint, 96 correlated leave-one-out episodes, and limited policy
+seed analysis. They are not ARC-AGI results and do not establish out-of-domain
+generalization.
+
+[code](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
+[report](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
