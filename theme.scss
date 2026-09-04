@@ -25,6 +25,9 @@ $pre-bg:                   $paper;
 $mark-bg:                  $paper;
 $input-bg:                 $paper;
 $input-border-color:       $rule;
+// Bootstrap's focus ring is a translucent accent shadow; the focus style is
+// the solid accent outline in styles.css instead.
+$focus-ring-box-shadow:    none;
 
 // Quarto colour mapping.
 $navbar-bg:                $paper;
