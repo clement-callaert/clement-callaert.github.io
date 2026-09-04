@@ -2,7 +2,6 @@
 title: "Clément Callaert"
 pagetitle: "Clément Callaert"
 description: "Research on generative and world models under finite compute."
-page-layout: full
 toc: false
 ---
 

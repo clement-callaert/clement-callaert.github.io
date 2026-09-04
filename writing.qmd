@@ -1,12 +1,11 @@
 ---
 title: "Writing"
 description: "Technical notes on generative modeling, world models, numerical evaluation, and research practice."
-page-layout: full
 listing:
   contents: posts
   sort: "date desc"
   type: default
-  categories: true
+  categories: false
   feed: true
 ---
 

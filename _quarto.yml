@@ -10,9 +10,7 @@ website:
   site-url: "https://clement-callaert.github.io"
   description: "Research on generative and world models under finite compute."
   favicon: assets/mark-full.svg
-  search:
-    location: navbar
-    type: overlay
+  search: false
   open-graph: true
   twitter-card: true
   navbar:
@@ -30,25 +28,17 @@ website:
         text: CV
       - href: about.qmd
         text: About
-    tools:
-      - icon: github
-        href: "https://github.com/clement-callaert"
-        aria-label: GitHub
-      - icon: linkedin
-        href: "https://www.linkedin.com/in/clement-callaert"
-        aria-label: LinkedIn
   page-footer:
-    left: "© 2026 Clément Callaert · Machine learning research"
-    center: "Generative models · World models · Finite compute"
+    left: "© 2026 Clément Callaert"
     right: "Built with [Quarto](https://quarto.org/)"
 
 format:
   html:
     theme: theme.scss
     css: styles.css
-    toc: true
+    toc: false
     anchor-sections: true
-    link-external-icon: true
-    link-external-newwindow: true
+    link-external-icon: false
+    link-external-newwindow: false
 
 lang: en
