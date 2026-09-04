@@ -1,0 +1,50 @@
+/*-- scss:defaults --*/
+
+// The five tokens. These are the only colour literals in the codebase.
+$paper:  #FFFFFF;
+$ink:    #14181C;
+$muted:  #6B7075;
+$rule:   #E4E6E8;
+$accent: #1A4E73;
+
+// Bootstrap colour mapping.
+$body-bg:                  $paper;
+$body-color:               $ink;
+$primary:                  $accent;
+$link-color:               $accent;
+$link-hover-color:         $accent;
+$border-color:             $rule;
+$headings-color:           $ink;
+$text-muted:               $muted;
+$hr-color:                 $rule;
+$table-border-color:       $rule;
+$code-color:               $ink;
+$code-bg:                  $paper;
+$pre-bg:                   $paper;
+$mark-bg:                  $paper;
+$input-bg:                 $paper;
+$input-border-color:       $rule;
+
+// Quarto colour mapping.
+$navbar-bg:                $paper;
+$navbar-fg:                $ink;
+$navbar-hl:                $ink;
+$footer-bg:                $paper;
+$footer-fg:                $muted;
+$toc-color:                $muted;
+$toc-active-border:        $rule;
+$callout-color-note:       $accent;
+$callout-color-tip:        $ink;
+$callout-color-caution:    $ink;
+$callout-color-warning:    $ink;
+$callout-color-important:  $ink;
+
+/*-- scss:rules --*/
+
+:root {
+  --paper:  #{$paper};
+  --ink:    #{$ink};
+  --muted:  #{$muted};
+  --rule:   #{$rule};
+  --accent: #{$accent};
+}

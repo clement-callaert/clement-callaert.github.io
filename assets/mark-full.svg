@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 64" role="img" aria-label="Clément Callaert mark">
+  <!-- Two identical arcs, radius R=30, centres (44,17) and (44,47), R apart on the
+       vertical axis. Their intersections at (18.02,32) and (69.98,32) fix the nose
+       and the crossing; each arc runs 160° (120° of body + 40° of tail splay).
+       Body = vesica piscis, width R√3 × height R. Fish faces left. -->
+  <g fill="none" stroke="#14181C" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18.02 32A30 30 0 0 1 73.54 52.21"/>
+    <path d="M18.02 32A30 30 0 0 0 73.54 11.79"/>
+  </g>
+  <!-- Wake: six marks decaying in size and opacity, dispersion widening to the east.
+       Read right-to-left, a noisy sample condensing to a clean form. -->
+  <g fill="#14181C">
+    <circle cx="78.5" cy="32.5" r="2" opacity=".5"/>
+    <circle cx="84" cy="30" r="1.65" opacity=".4"/>
+    <circle cx="89" cy="35" r="1.35" opacity=".3"/>
+    <circle cx="93.5" cy="28" r="1.05" opacity=".2"/>
+    <circle cx="97.5" cy="37.5" r=".8" opacity=".12"/>
+    <circle cx="101.5" cy="25" r=".62" opacity=".07"/>
+  </g>
+  <!-- The one accent: a single eye. -->
+  <circle cx="26" cy="29.5" r="2.2" fill="#1A4E73"/>
+</svg>
