@@ -3,7 +3,7 @@ title: "Notes on probability paths"
 pagetitle: "Notes on probability paths"
 ---
 
-::: {.updated}
+::: {.muted}
 Last updated: September 2026
 :::
 

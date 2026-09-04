@@ -6,10 +6,10 @@ pagetitle: "Notes"
 Working notes, updated as I go. They are not surveys.
 
 [Notes on probability paths](notes/probability-paths.qmd)
-[updated September 2026]{.updated}
+[updated September 2026]{.muted}
 
 [Notes on latent world models and planning](notes/world-models-and-planning.qmd)
-[updated September 2026]{.updated}
+[updated September 2026]{.muted}
 
 [Notes on evaluation under a fixed budget](notes/evaluation-under-budget.qmd)
-[updated September 2026]{.updated}
+[updated September 2026]{.muted}

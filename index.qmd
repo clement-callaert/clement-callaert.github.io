@@ -34,31 +34,16 @@ registered grid reverse the two orderings. Exact Gaussian systems only.
 [manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf) ·
 [audit](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/audit/CLAIM_EVIDENCE_MATRIX.md)
 
-### Ego-world JEPA
-
-Strong latent decodability did not produce a planning benefit on PushT. The
-seed-0 gap was not significant (p = 0.269) and did not replicate on seed 1.
-Two seeds, one setup. Frozen.
-
-[code](https://github.com/clement-callaert/ego-world-sub-jepa) ·
-[results](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json)
-
-### Adaptive latent search
-
-A learned stop-or-continue policy matched a gradient-norm rule but used more
-steps. The oracle gap suggests the idea is not dead; this implementation of it
-is.
-
-[code](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
-[report](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
+[Two more on the [research page](research.qmd), with methods and limitations
+in full.]{.muted}
 
 ## Notes
 
 [Notes on probability paths](notes/probability-paths.qmd)
-[updated September 2026]{.updated}
+[updated September 2026]{.muted}
 
 [Notes on latent world models and planning](notes/world-models-and-planning.qmd)
-[updated September 2026]{.updated}
+[updated September 2026]{.muted}
 
 [Notes on evaluation under a fixed budget](notes/evaluation-under-budget.qmd)
-[updated September 2026]{.updated}
+[updated September 2026]{.muted}

@@ -3,7 +3,7 @@ title: "Notes on latent world models and planning"
 pagetitle: "Notes on latent world models and planning"
 ---
 
-::: {.updated}
+::: {.muted}
 Last updated: September 2026
 :::
 

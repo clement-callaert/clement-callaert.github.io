@@ -3,7 +3,7 @@ title: "Notes on evaluation under a fixed budget"
 pagetitle: "Notes on evaluation under a fixed budget"
 ---
 
-::: {.updated}
+::: {.muted}
 Last updated: September 2026
 :::
 
