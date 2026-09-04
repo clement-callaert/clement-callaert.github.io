@@ -23,7 +23,7 @@ website:
       - href: research.qmd
         text: Research
       - href: writing.qmd
-        text: Writing
+        text: Notes
       - href: cv.qmd
         text: CV
       - href: about.qmd

@@ -1,10 +1,11 @@
 ---
-title: "Writing"
+title: "Notes"
 description: "Technical notes on generative modeling, world models, numerical evaluation, and research practice."
 listing:
   contents: posts
   sort: "date desc"
   type: default
+  fields: [date, title, description]
   categories: false
   feed: true
 ---

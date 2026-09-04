@@ -1,61 +1,63 @@
 ---
 title: "Clément Callaert"
 pagetitle: "Clément Callaert"
-description: "Research on generative and world models under finite compute."
 toc: false
+listing:
+  - id: notes
+    contents: posts
+    type: default
+    sort: "date desc"
+    fields: [date, title, description]
+    categories: false
+    feed: false
 ---
 
-I study how probability paths, learned dynamics, numerical solvers, and
-inference-time computation affect prediction and decision-making—with an
-emphasis on controlled experiments and conclusions that hold up against
-strong baselines.
+MSc, CentraleSupélec · M2 Mathematics and AI, Université Paris-Saclay\
+Until September 2026: apprentice AI engineer, MBDA
 
-[Explore the research](research.qmd) ·
-[Read technical notes](writing.qmd) ·
 [GitHub](https://github.com/clement-callaert) ·
-[LinkedIn](https://www.linkedin.com/in/clement-callaert)
+[LinkedIn](https://www.linkedin.com/in/clement-callaert) ·
+[CV](cv.qmd)
 
-## Selected research
+I work on generative models of dynamics: probability paths and flow matching,
+latent world models for planning, and how these behave when the sampling
+budget is small.
 
-### Few-Step Field Regularity
+The projects below are personal work done on a single GPU, not lab research.
+Each has a public repository, a short report, and an explicit note on what the
+result does not show. I am applying for PhD positions starting in 2027.
 
-Can averaged field regularity rank probability paths when a flow ODE is solved
-with only a few function evaluations?
+## Projects
 
-An exact one-dimensional Gaussian construction reverses the regularity and
-Heun error orderings at eight function evaluations.
+### Few-step field regularity
 
-[Repository](https://github.com/clement-callaert/fewstep-field-regularity) ·
-[Manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf)
+At a fixed number of function evaluations, lower averaged Jacobian regularity
+does not reliably imply lower sampling error. 14 of 36 path comparisons in the
+registered grid reverse the two orderings. Exact Gaussian systems only.
 
-### Ego-World JEPA
+[code](https://github.com/clement-callaert/fewstep-field-regularity) ·
+[manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf) ·
+[audit](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/audit/CLAIM_EVIDENCE_MATRIX.md)
 
-Does a factored latent world model make model-predictive control more effective
-on PushT?
+### Ego-world JEPA
 
-Strong in-slice decodability did not produce a robust planning benefit; the
-apparent seed-0 gap disappeared on the second seed.
+Strong latent decodability did not produce a planning benefit on PushT. The
+seed-0 gap was not significant (p = 0.269) and did not replicate on seed 1.
+Two seeds, one setup. Frozen.
 
-[Repository & results](https://github.com/clement-callaert/ego-world-sub-jepa)
+[code](https://github.com/clement-callaert/ego-world-sub-jepa) ·
+[results](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json)
 
-### Adaptive Latent Search
+### Adaptive latent search
 
-Can a learned stop-or-continue controller allocate latent-search compute better
-than fixed budgets and simple diagnostics?
+A learned stop-or-continue policy matched a gradient-norm rule but used more
+steps. The oracle gap suggests the idea is not dead; this implementation of it
+is.
 
-In a small `pattern_2d` sandbox, the learned controller did not beat a
-gradient-norm stopping rule despite a substantial oracle gap.
+[code](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
+[report](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
 
-[Research branch](https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search) ·
-[Report](https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf)
+## Notes
 
-## Background
-
-I am completing the Engineering Degree at CentraleSupélec, specializing in
-Mathematics and Data Science, alongside the Research Master's in Mathematics
-and Artificial Intelligence at Université Paris-Saclay. I also work as a
-Generative AI Engineer at MBDA on multi-agent systems built around large
-language models, following a Data Scientist apprenticeship at TotalEnergies'
-Digital Factory.
-
-[More about my background](about.qmd) · [Concise CV](cv.qmd)
+::: {#notes}
+:::
