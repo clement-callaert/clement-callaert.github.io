@@ -156,9 +156,9 @@ p {
 
 .finding,
 .limits {
-  border-left: 4px solid var(--rule);
+  border-left: 2px solid var(--rule);
   margin: 1.4rem 0;
-  padding: 0 0 0 1.4rem;
+  padding-left: 16px;
 }
 
 .finding p,
