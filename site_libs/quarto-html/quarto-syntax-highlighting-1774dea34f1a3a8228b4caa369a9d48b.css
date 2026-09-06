@@ -1,0 +1,12 @@
+/* quarto syntax highlight colors */
+/* other quarto variables */
+:root {
+  --quarto-font-monospace: ui-monospace, monospace;
+}
+
+/* syntax highlight based on Pandoc's rules */
+.prevent-inlining {
+  content: "</";
+}
+
+/*# sourceMappingURL=cafd679dc91081c156e9457bfb459471.css.map */

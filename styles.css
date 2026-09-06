@@ -1,0 +1,362 @@
+@font-face {
+  font-display: swap;
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/source-serif-4-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  src: url("assets/fonts/source-serif-4-latin-600-normal.woff2") format("woff2");
+}
+
+/* Base */
+
+html {
+  background: var(--paper);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover,
+a:focus {
+  color: var(--ink);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+code {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0;
+}
+
+/* One 800px container, with 720px prose inside it. Keep Quarto's named
+   grid lines, but remove its extra sidebar tracks and breakpoint-dependent
+   body caps. Navigation, content and footer share the same gutters. */
+
+#quarto-content.page-columns {
+  grid-template-columns:
+    [screen-start] minmax(1.5rem, 1fr)
+    [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, 800px)
+    [body-content-end body-end body-end-outset page-end-inset page-end screen-end-inset] minmax(1.5rem, 1fr)
+    [screen-end];
+}
+
+#quarto-content main.content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding-bottom: 2.5rem;
+  padding-top: 3rem;
+  /* Auto margins make a grid item shrink to fit its content, which narrows
+     short pages; width: 100% holds the shared column on every page. */
+  width: 100%;
+}
+
+main.content p {
+  max-width: 720px;
+}
+
+/* These paragraphs are link/list rows or CV heading rows, not prose.
+   Scope link-only exceptions to the existing sections; inline links in
+   prose do not change its measure. */
+
+main.content :is(.profile-links, .research-links, .project-links, .profile-panel, .cv-item__head) p,
+main.content :is(#notes, #news, #public-profiles) > p,
+main.content > p:has(> a[href^="./notes/"]):has(> .muted),
+main.content :is(#few-step-field-regularity, #regularity-is-not-a-reliable-ordering-surrogate-at-low-nfe, #spending-steps-where-they-help) > p:has(> a:first-child),
+main.content .secondary-card > p:last-child {
+  max-width: none;
+}
+
+/* Headings. The rule under a section heading is the only decoration on the
+   site. */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 27px;
+  margin-bottom: 1.6rem;
+}
+
+h2 {
+  border-bottom: 1px solid var(--rule);
+  font-size: 19px;
+  margin-top: 3.2rem;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 2.2rem;
+}
+
+p {
+  margin-bottom: 1.15rem;
+}
+
+.quarto-title-block {
+  margin-bottom: 2rem;
+}
+
+.quarto-title .description {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Home header */
+
+#quarto-content main.content:has(> .home-header) {
+  padding-top: 1.5rem;
+}
+
+.home-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 24px;
+}
+
+.home-header__portrait {
+  flex: 0 0 auto;
+}
+
+.home-header__portrait p {
+  margin: 0;
+}
+
+.home-header__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.portrait {
+  border: 0;
+  border-radius: 0;
+  display: block;
+  height: 150px;
+  object-fit: cover;
+  width: 150px;
+}
+
+@media (width < 640px) {
+  .home-header {
+    flex-direction: column;
+  }
+}
+
+/* Navigation */
+
+.navbar {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  min-height: 0;
+  padding-bottom: 0.85rem;
+  padding-top: 0.85rem;
+}
+
+.navbar-container {
+  max-width: calc(800px + 3rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.navbar-brand-container {
+  gap: 0.6rem;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.navbar-logo {
+  height: 22px;
+  max-height: 22px;
+  width: auto;
+}
+
+.navbar-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+  color: var(--muted) !important;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 0.7rem !important;
+  padding-right: 0.7rem !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--ink) !important;
+}
+
+/* Research and project pages */
+
+.research-project {
+  margin: 0;
+}
+
+.finding,
+.limits {
+  border-left: 2px solid var(--rule);
+  margin: 1.4rem 0;
+  padding-left: 16px;
+}
+
+.finding p,
+.limits p {
+  margin: 0;
+}
+
+.project-status,
+.research-links,
+.project-links {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* CV */
+
+.cv-item {
+  margin-bottom: 1.4rem;
+}
+
+.cv-item__head p {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+}
+
+.cv-item__head span {
+  color: var(--muted);
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.cv-item > p {
+  color: var(--muted);
+  margin: 0.15rem 0 0;
+}
+
+/* Secondary lines: the notes' updated line, the pointer to the research
+   page, the colophon. */
+
+.muted {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Typography normalisation: Bootstrap and Quarto defaults that fall outside
+   the two weights and the five sizes. */
+
+b,
+strong,
+th {
+  font-weight: 600;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading,
+#title-block-header.quarto-title-block.default .quarto-title-meta-contents,
+#title-block-header.quarto-title-block.default .description .block-title,
+#title-block-header.quarto-title-block.default .abstract .block-title,
+#title-block-header.quarto-title-block.default .keywords .block-title,
+.quarto-title .quarto-categories .quarto-category {
+  border: 0;
+  border-radius: 0;
+  font-size: 16px;
+  opacity: 1;
+  padding: 0 0.75em 0 0;
+  text-transform: none;
+}
+
+table,
+.table,
+.table > :not(caption) > * > *,
+thead,
+th,
+td {
+  border-color: var(--rule);
+}
+
+/* End mark: the site's one glyph, closing the content area on every page. */
+
+.end-mark {
+  grid-column: body-content-start / body-content-end;
+  margin: 2.5rem 0 0;
+  padding-bottom: 3.5rem;
+  text-align: center;
+}
+
+.end-mark svg {
+  height: 16px;
+  stroke: var(--rule);
+  width: auto;
+}
+
+/* Colophon: home page only. */
+
+.colophon {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 3.5rem;
+  padding-top: 1.2rem;
+}
+
+/* Footer */
+
+footer.footer {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 16px;
+  padding-bottom: 1.6rem;
+  padding-top: 1.6rem;
+}
+
+footer.footer .nav-footer {
+  margin: 0 auto;
+  max-width: calc(800px + 3rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+footer.footer a {
+  color: var(--muted);
+}
+
+footer.footer .nav-footer-left,
+footer.footer .nav-footer-right {
+  padding-left: 0;
+  padding-right: 0;
+}

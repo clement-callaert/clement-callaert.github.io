@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 6 64 52" role="img" aria-label="Clément Callaert mark">
+  <!-- Navbar variant, legible at 22px: body plus eye only. The wake dots of
+       mark-full.svg disappear into mush at this size. -->
+  <g fill="none" stroke="#14181C" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18.02 32A30 30 0 0 1 73.54 52.21"/>
+    <path d="M18.02 32A30 30 0 0 0 73.54 11.79"/>
+  </g>
+  <!-- The one accent: a single eye. -->
+  <circle cx="26" cy="29.5" r="2.2" fill="#1A4E73"/>
+</svg>

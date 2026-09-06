@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Questions, methods, results, limitations, and public artifacts.">
+
+<title>Research – Clément Callaert</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./assets/mark-full.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1774dea34f1a3a8228b4caa369a9d48b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-e7a9e4489d7c8ed53da9810214a2c9d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Research – Clément Callaert">
+<meta property="og:description" content="Questions, methods, results, limitations, and public artifacts.">
+<meta property="og:site_name" content="Clément Callaert">
+<meta name="twitter:title" content="Research – Clément Callaert">
+<meta name="twitter:description" content="Questions, methods, results, limitations, and public artifacts.">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/mark.svg" alt="Clément Callaert" class="navbar-logo light-content">
+    <img src="./assets/mark.svg" alt="Clément Callaert" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Clément Callaert</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./research.html" aria-current="page"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./writing.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Research</h1>
+</div>
+
+<div>
+  <div class="description">
+    Questions, methods, results, limitations, and public artifacts.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="page-lead">
+<p>My current public work centers on generative models, latent world models, planning, and compute allocation. I treat evaluation design as part of the research contribution: a useful result should remain understandable when the headline hypothesis fails.</p>
+</div>
+<section id="few-step-field-regularity" class="level2 research-project">
+<h2 class="anchored" data-anchor-id="few-step-field-regularity">Few-Step Field Regularity</h2>
+<p><strong>Question.</strong> Probability paths change the velocity field learned by flow matching. At a fixed number of function evaluations (NFE), does lower averaged Jacobian regularity reliably imply lower numerical sampling error?</p>
+<p><strong>Method.</strong> The project uses commuting Gaussian probability-flow ODEs, where the dynamics and Gaussian <span class="math inline">\(W_2\)</span> endpoint error are available exactly. It pairs a closed-form scalar construction with a frozen 36-comparison comparison of linear and trigonometric variance-preserving paths under equal-NFE Euler, Heun, and RK4 solvers; selected settings also compare four candidate paths.</p>
+<div class="finding">
+<!-- Provenance: repository=clement-callaert/fewstep-field-regularity; commit=6040eafc9d4c3a59d978f281fc25fbbf5eb0982a;
+path=paper/arxiv/artifacts/scalar_counterexample.json (lambda, nfe, ranking_inverted);
+path=paper/arxiv/artifacts/centered_blocks.json (n_blocks, n_inversions_continuous_R, hierarchy);
+path=paper/arxiv/generated/numbers.tex (nGeometrySolverCells, nInversionCells);
+path=docs/CLAIMS_LEDGER.md (P4-C1, primary reporting hierarchy). -->
+<p><strong>Main result.</strong> For the transport <span class="math inline">\(\mathcal{N}(0,1)\rightarrow\mathcal{N}(0,4)\)</span>, averaged regularity prefers a trigonometric variance-preserving path, while Heun at NFE 8 gives lower <span class="math inline">\(W_2\)</span> error to the linear path. The frozen grid has 12 geometry–solver cells, each evaluated at NFE 8, 16, and 32. Five cells contain ranking inversions, spanning 14 of the 36 paired path comparisons. This is evidence that averaged regularity is not, by itself, a reliable ordering surrogate under finite discretization.</p>
+</div>
+<div class="limits">
+<p><strong>Limits.</strong> The closed-form claims concern exact Gaussian systems, not learned neural velocity fields. The 14-of-36 count describes one finite registered grid, not a population failure rate or a general theorem about flow matching.</p>
+</div>
+<div class="project-status">
+<p><strong>Status.</strong> Public research manuscript and reproducible software. No venue acceptance or public archival publication is claimed here.</p>
+</div>
+<div class="research-links">
+<p><a href="https://github.com/clement-callaert/fewstep-field-regularity">Repository</a> · <a href="https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf">Manuscript PDF</a> · <a href="https://github.com/clement-callaert/fewstep-field-regularity/blob/main/audit/CLAIM_EVIDENCE_MATRIX.md">Claim and evidence audit</a></p>
+</div>
+</section>
+<section id="ego-world-jepa" class="level2 research-project">
+<h2 class="anchored" data-anchor-id="ego-world-jepa">Ego-World JEPA</h2>
+<p><strong>Question.</strong> Does factorizing an action-conditioned latent world model into object-relevant components improve planning with a shared detector and MPPI controller on PushT?</p>
+<p><strong>Method.</strong> Eight configurations vary latent factorization, auxiliary supervision, and related modeling choices. The main factored and monolithic pair was evaluated with 50 planning episodes per seed, 512 MPPI samples, six optimization iterations, and an eight-step horizon. Both use the same detector and controller.</p>
+<div class="finding">
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/grid/g1_probe.json (world_probe.r2, manifest.config.model.img_size);
+path=results/grid/g2_probe.json (world_probe.r2, manifest.config.model.img_size);
+path=results/diagnostics/perfactor/g1_seed0.json (z_world_abs.r2, z_world_disp.r2);
+path=results/diagnostics/perfactor/g2_seed0.json (z_world_abs.r2, z_world_disp.r2);
+path=results/grid/stats_corrected_multiseed.json (per_run[config=g1/g2,seed=0/1].successes,n_episodes);
+path=results/grid/stats.json (fisher_pairs[0].p_value). -->
+<p><strong>Main result.</strong> On the 96 px g1/g2 checkpoints at seed 0, an in-slice ridge probe of absolute block pose reached <span class="math inline">\(R^2=0.997\)</span> for the factored model and <span class="math inline">\(R^2=0.992\)</span> for the monolithic model, with 6/50 and 2/50 planning successes. A displacement probe on the same checkpoints reached <span class="math inline">\(R^2=0.205\)</span> and <span class="math inline">\(R^2=0.240\)</span>, reversing the probe ordering. On seed 1, both reached 2/50 planning successes. The seed-0 planning difference was not significant under the reported Fisher test (<span class="math inline">\(p=0.269\)</span>), and the apparent factorization advantage did not replicate. High probe decodability was therefore insufficient evidence of a planning-useful representation in this setup.</p>
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/probe/factored_cov_seed0.json (world_probe.r2, manifest.config.model.img_size);
+path=results/probe/monolithic_seed0.json (world_probe.r2, manifest.checkpoint_model_config);
+path=results/grid/g1_probe.json (manifest.config);
+path=results/grid/g2_probe.json (manifest.config). -->
+<p>Earlier 64 px checkpoints reached absolute-pose probe <span class="math inline">\(R^2=0.286\)</span> for the factored model and <span class="math inline">\(R^2=0.779\)</span> for the monolithic model. The configurations differed from g1/g2, including auxiliary supervision.</p>
+</div>
+<div class="limits">
+<p><strong>Limits.</strong> The primary comparison has two seeds, the probe is in-slice and partly aligned with auxiliary supervision, and success rates remain low across the grid. The experiment covers one PushT setup and does not establish a broad claim about JEPA representations or model-predictive control.</p>
+</div>
+<div class="project-status">
+<p><strong>Status.</strong> Completed and frozen controlled project; the central outcome is a negative result.</p>
+</div>
+<div class="research-links">
+<p><a href="https://github.com/clement-callaert/ego-world-sub-jepa">Repository</a> · <a href="https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json">Results manifest</a> · <a href="https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/grid/stats_corrected_multiseed.json">Multiseed statistics</a></p>
+</div>
+</section>
+<section id="lpn-adaptive-latent-search" class="level2 research-project">
+<h2 class="anchored" data-anchor-id="lpn-adaptive-latent-search">LPN / Adaptive Latent Search</h2>
+<p><strong>Question.</strong> During latent optimization, can a learned stop-or-continue policy spend additional steps only where they are useful?</p>
+<p><strong>Method.</strong> This is an experimental extension of Bonnet and Macfarlane’s LPN codebase. In the public <code>pattern_2d</code> sandbox, policies train on two checkpoints and are evaluated on a held-out third checkpoint. Fixed-step rules, hand-built stopping heuristics, a learned controller, and a non-deployable oracle are compared over the same five-step horizon.</p>
+<div class="finding">
+<p><strong>Main result.</strong> The learned zero-penalty policy reached 0.90625 exact match at 4.281 mean steps. A gradient-norm rule reached the same exact match at 3.438 steps; the oracle reached it at 0.562 mean steps. The oracle gap shows that adaptive allocation could matter, but the learned policy did not outperform the strongest simple heuristic. The experiment motivates better stopping observations and estimators rather than a performance claim.</p>
+</div>
+<div class="limits">
+<p><strong>Limits.</strong> These results come from a small in-family <code>pattern_2d</code> task, one held-out checkpoint, 96 correlated leave-one-out episodes, and limited policy seed analysis. They are not ARC-AGI results and do not establish out-of-domain generalization.</p>
+</div>
+<div class="project-status">
+<p><strong>Status.</strong> Exploratory extension and documented negative result.</p>
+</div>
+<div class="research-links">
+<p><a href="https://github.com/clement-callaert/lpn/tree/research/stochastic-latent-search">Research branch</a> · <a href="https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/README_RESEARCH.md">Research README</a> · <a href="https://github.com/clement-callaert/lpn/blob/research/stochastic-latent-search/report/main.pdf">Report PDF</a></p>
+</div>
+</section>
+<section id="secondary-projects" class="level2">
+<h2 class="anchored" data-anchor-id="secondary-projects">Secondary projects</h2>
+<div class="secondary-grid">
+<section id="learned-niche-selection-for-sycophancy-probing" class="level3 secondary-card">
+<h3 class="anchored" data-anchor-id="learned-niche-selection-for-sycophancy-probing">Learned niche selection for sycophancy probing</h3>
+<!-- Provenance: repository=clement-callaert/aces-sycophancy; commit=38bde0778e8bc1f7f7b882e65e3c087def0597c2;
+path=outputs/figures/compare100_lockin_diagnostics.json (condition, seed, coverage, qd_score, budget.max_share);
+path=examples/sycophancy/configs/compare_100_epsilon.json (selector.random_ratio, generations).
+Means are calculated across the two public per-seed rows, not stored mean fields. -->
+<p>An adaptation of ACES to a grounded 12-cell sycophancy-probing domain. Over two seeds and 100 generations, plain Bayesian factored-ALP selection trailed uniform sampling in mean QD-score (9.219 versus 10.750). An <span class="math inline">\(\varepsilon=0.2\)</span> exploration floor recovered mean coverage to 0.917 and mean QD-score to 11.000, although one seed retained substantial cell concentration. With only two seeds, this is a diagnostic case study, not an inferential or publication claim.</p>
+<p><a href="https://github.com/clement-callaert/aces-sycophancy">Repository and report</a></p>
+</section>
+<section id="proximal-diffusion-models-in-pytorch" class="level3 secondary-card">
+<h3 class="anchored" data-anchor-id="proximal-diffusion-models-in-pytorch">Proximal Diffusion Models in PyTorch</h3>
+<p>A from-scratch course reproduction of the proximal diffusion framework on MNIST and small two-dimensional distributions, including score-based and proximal samplers, tests, configuration, and an FID-versus-NFE evaluation pipeline. This is an implementation of published work, not an original paper.</p>
+<p><a href="https://github.com/clement-callaert/proximal-diffusion-models-pytorch">Repository</a></p>
+</section>
+<section id="decision-transformer-for-limit-order-book-trading" class="level3 secondary-card">
+<h3 class="anchored" data-anchor-id="decision-transformer-for-limit-order-book-trading">Decision Transformer for limit-order-book trading</h3>
+<p>A reproducible offline-RL benchmark co-developed with Côme Genet on FI-2010. Across five seeds, the Decision Transformer improved over behavior cloning but did not beat buy-and-hold under the primary transaction-cost setting.</p>
+<!-- Provenance: repository=clement-callaert/Decision-Transformer-LOB-Trading; path=src/env/lob_trading_env.py; commit=28703506e8e6529a52209afb5ecb32030b17d007; lines=259-288 (instantaneous position changes and transaction-cost reward). -->
+<p>The reported units are normalized feature-space PnL, and the execution model ignores spread, latency, queue position, and market impact.</p>
+<p><a href="https://github.com/clement-callaert/Decision-Transformer-LOB-Trading">Repository</a></p>
+</section>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<div class="end-mark" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" viewbox="14 6 64 52" focusable="false">
+    <g fill="none" stroke-width="3.33" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18.02 32A30 30 0 0 1 73.54 52.21"></path>
+      <path d="M18.02 32A30 30 0 0 0 73.54 11.79"></path>
+    </g>
+  </svg>
+</div>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/clementcallaert\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Clément Callaert</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
