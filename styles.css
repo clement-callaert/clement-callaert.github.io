@@ -138,9 +138,12 @@ p {
 }
 
 .home-header {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   gap: 24px;
+  /* Held here rather than on the links row, whose own margin is dropped
+     below so the text box measures its visible text and nothing else. */
+  margin-bottom: 1.15rem;
 }
 
 .home-header__portrait {
@@ -156,6 +159,20 @@ p {
   min-width: 0;
 }
 
+/* Centring the portrait against the text only reads as centred if the text
+   box holds no dead space. The opening h1 carries a 2rem top margin and the
+   links row a paragraph margin below it; both sit inside the flex box and
+   would push the visible text down against a portrait that stayed put. The
+   page already sets its own top padding on main. */
+.home-header__text > :first-child {
+  margin-top: 0;
+}
+
+.home-header__text > :last-child,
+.home-header__text > :last-child > p:last-child {
+  margin-bottom: 0;
+}
+
 .portrait {
   border: 0;
   border-radius: 0;
@@ -167,6 +184,9 @@ p {
 
 @media (width < 640px) {
   .home-header {
+    /* Stacked, the cross axis is horizontal: centring here would pull the
+       portrait and the text off the page's left margin. */
+    align-items: flex-start;
     flex-direction: column;
   }
 }
