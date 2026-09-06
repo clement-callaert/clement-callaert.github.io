@@ -1,6 +1,7 @@
 ---
 title: "Notes on probability paths"
 pagetitle: "Notes on probability paths"
+draft: true
 ---
 
 ::: {.muted}

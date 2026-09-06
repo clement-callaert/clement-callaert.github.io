@@ -2,6 +2,9 @@
 private/
 .quarto/
 _site/
+/_handoff/
+/AUDIT.md
+/HEADER_REVIEW.md
 
 # Local preview and editor state
 .DS_Store

@@ -3,22 +3,32 @@ pagetitle: "Clément Callaert"
 toc: false
 ---
 
-![](assets/portrait.jpg){.portrait fig-alt="Clément Callaert"}
+:::: {.home-header}
+::: {.home-header__portrait}
+<img src="assets/portrait.jpg" class="portrait" width="150" height="150" alt="Clément Callaert">
+:::
 
+::: {.home-header__text}
 # Clément Callaert
 
 MSc, CentraleSupélec · M2 Mathematics and AI, Université Paris-Saclay\
 Until September 2026: apprentice AI engineer, MBDA
 
+::: {.profile-links}
+clement [at] clementcallaert [dot] com ·
 [GitHub](https://github.com/clement-callaert) ·
 [LinkedIn](https://www.linkedin.com/in/clement-callaert) ·
 [CV](cv.qmd)
+:::
+:::
+::::
 
 I work on generative models of dynamics: probability paths and flow matching,
 latent world models for planning, and how these behave when the sampling
 budget is small.
 
-The projects below are personal work done on a single GPU, not lab research.
+<!-- Provenance: owner-supplied by Clément Callaert in the audit-application approval, 2026-09-05; autobiographical statement, no research artifact claimed. -->
+The projects below are personal work, not lab research.
 Each has a public repository, a short report, and an explicit note on what the
 result does not show. I am applying for PhD positions starting in 2027.
 
@@ -26,9 +36,12 @@ result does not show. I am applying for PhD positions starting in 2027.
 
 ### Few-step field regularity
 
+<!-- Provenance: repository=clement-callaert/fewstep-field-regularity; commit=6040eafc9d4c3a59d978f281fc25fbbf5eb0982a;
+path=paper/arxiv/artifacts/centered_blocks.json (n_blocks, n_inversions_continuous_R, hierarchy);
+path=paper/arxiv/generated/numbers.tex (nGeometrySolverCells, nInversionCells);
+path=docs/CLAIMS_LEDGER.md (P4-C1, primary reporting hierarchy). -->
 At a fixed number of function evaluations, lower averaged Jacobian regularity
-does not reliably imply lower sampling error. 14 of 36 path comparisons in the
-registered grid reverse the two orderings. Exact Gaussian systems only.
+does not reliably imply lower sampling error. The frozen grid has 12 geometry–solver cells, each evaluated at NFE 8, 16, and 32. Five cells contain ranking inversions, spanning 14 of the 36 paired path comparisons. Exact Gaussian systems only.
 
 [code](https://github.com/clement-callaert/fewstep-field-regularity) ·
 [manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf) ·
@@ -39,17 +52,19 @@ in full.]{.muted}
 
 ## Notes
 
-[Notes on probability paths](notes/probability-paths.qmd)
-[updated September 2026]{.muted}
-
 [Notes on latent world models and planning](notes/world-models-and-planning.qmd)
 [updated September 2026]{.muted}
 
-[Notes on evaluation under a fixed budget](notes/evaluation-under-budget.qmd)
-[updated September 2026]{.muted}
+## Contact
+
+<!-- Provenance: owner-supplied contact address and PhD plans in the final pre-push approval, 2026-09-05. -->
+clement [at] clementcallaert [dot] com. I am looking for a PhD position starting
+in 2027, in generative modelling, world models, or evaluation under limited
+compute. I am happy to discuss any of the projects above, including the ones
+that did not work.
 
 ::: {.colophon}
-Set in Source Serif 4. Built with Quarto;
-[source](https://github.com/clement-callaert/clement-callaert.github.io).
-Every experiment described here was run on one consumer GPU.
+<!-- Provenance: owner-supplied by Clément Callaert in the audit-application approval, 2026-09-05; personal working conditions, no research artifact claimed. -->
+Set in Source Serif 4. Built with Quarto; [source](https://github.com/clement-callaert/clement-callaert.github.io). These are personal projects,
+run on my own machine rather than on cluster compute.
 :::

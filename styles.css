@@ -23,8 +23,8 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 a {
@@ -51,17 +51,43 @@ code {
   padding: 0;
 }
 
-/* One column, 680px, everywhere */
+/* One 800px container, with 720px prose inside it. Keep Quarto's named
+   grid lines, but remove its extra sidebar tracks and breakpoint-dependent
+   body caps. Navigation, content and footer share the same gutters. */
+
+#quarto-content.page-columns {
+  grid-template-columns:
+    [screen-start] minmax(1.5rem, 1fr)
+    [screen-start-inset page-start page-start-inset body-start-outset body-start body-content-start] minmax(0, 800px)
+    [body-content-end body-end body-end-outset page-end-inset page-end screen-end-inset] minmax(1.5rem, 1fr)
+    [screen-end];
+}
 
 #quarto-content main.content {
   margin-left: auto;
   margin-right: auto;
-  max-width: 680px;
+  max-width: 800px;
   padding-bottom: 2.5rem;
   padding-top: 3rem;
   /* Auto margins make a grid item shrink to fit its content, which narrows
-     short pages; width: 100% holds the column at 680px on every page. */
+     short pages; width: 100% holds the shared column on every page. */
   width: 100%;
+}
+
+main.content p {
+  max-width: 720px;
+}
+
+/* These paragraphs are link/list rows or CV heading rows, not prose.
+   Scope link-only exceptions to the existing sections; inline links in
+   prose do not change its measure. */
+
+main.content :is(.profile-links, .research-links, .project-links, .profile-panel, .cv-item__head) p,
+main.content :is(#notes, #news, #public-profiles) > p,
+main.content > p:has(> a[href^="./notes/"]):has(> .muted),
+main.content :is(#few-step-field-regularity, #regularity-is-not-a-reliable-ordering-surrogate-at-low-nfe, #spending-steps-where-they-help) > p:has(> a:first-child),
+main.content .secondary-card > p:last-child {
+  max-width: none;
 }
 
 /* Headings. The rule under a section heading is the only decoration on the
@@ -88,7 +114,7 @@ h2 {
 }
 
 h3 {
-  font-size: 17px;
+  font-size: 18px;
   margin-top: 2.2rem;
 }
 
@@ -105,12 +131,64 @@ p {
   font-size: 16px;
 }
 
+/* Home header */
+
+#quarto-content main.content:has(> .home-header) {
+  padding-top: 1.5rem;
+}
+
+.home-header {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  /* Held here rather than on the links row, whose own margin is dropped
+     below so the text box measures its visible text and nothing else. */
+  margin-bottom: 1.15rem;
+}
+
+.home-header__portrait {
+  flex: 0 0 auto;
+}
+
+.home-header__portrait p {
+  margin: 0;
+}
+
+.home-header__text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Centring the portrait against the text only reads as centred if the text
+   box holds no dead space. The opening h1 carries a 2rem top margin and the
+   links row a paragraph margin below it; both sit inside the flex box and
+   would push the visible text down against a portrait that stayed put. The
+   page already sets its own top padding on main. */
+.home-header__text > :first-child {
+  margin-top: 0;
+}
+
+.home-header__text > :last-child,
+.home-header__text > :last-child > p:last-child {
+  margin-bottom: 0;
+}
+
 .portrait {
+  border: 0;
+  border-radius: 0;
   display: block;
-  height: 160px;
-  margin-bottom: 1.8rem;
+  height: 150px;
   object-fit: cover;
-  width: 160px;
+  width: 150px;
+}
+
+@media (width < 640px) {
+  .home-header {
+    /* Stacked, the cross axis is horizontal: centring here would pull the
+       portrait and the text off the page's left margin. */
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 /* Navigation */
@@ -124,7 +202,9 @@ p {
 }
 
 .navbar-container {
-  max-width: 704px;
+  max-width: calc(800px + 3rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .navbar-brand-container {
@@ -140,7 +220,7 @@ p {
 }
 
 .navbar-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -217,7 +297,7 @@ p {
 }
 
 /* Typography normalisation: Bootstrap and Quarto defaults that fall outside
-   the two weights and the four sizes. */
+   the two weights and the five sizes. */
 
 b,
 strong,
@@ -286,7 +366,9 @@ footer.footer {
 
 footer.footer .nav-footer {
   margin: 0 auto;
-  max-width: 704px;
+  max-width: calc(800px + 3rem);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 footer.footer a {

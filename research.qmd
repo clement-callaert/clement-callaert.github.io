@@ -19,16 +19,20 @@ Jacobian regularity reliably imply lower numerical sampling error?
 
 **Method.** The project uses commuting Gaussian probability-flow ODEs, where
 the dynamics and Gaussian $W_2$ endpoint error are available exactly. It pairs
-a closed-form scalar construction with a frozen 36-block comparison of linear
+a closed-form scalar construction with a frozen 36-comparison comparison of linear
 and trigonometric variance-preserving paths under equal-NFE Euler, Heun, and
 RK4 solvers; selected settings also compare four candidate paths.
 
 ::: {.finding}
+<!-- Provenance: repository=clement-callaert/fewstep-field-regularity; commit=6040eafc9d4c3a59d978f281fc25fbbf5eb0982a;
+path=paper/arxiv/artifacts/scalar_counterexample.json (lambda, nfe, ranking_inverted);
+path=paper/arxiv/artifacts/centered_blocks.json (n_blocks, n_inversions_continuous_R, hierarchy);
+path=paper/arxiv/generated/numbers.tex (nGeometrySolverCells, nInversionCells);
+path=docs/CLAIMS_LEDGER.md (P4-C1, primary reporting hierarchy). -->
 **Main result.** For the transport
 $\mathcal{N}(0,1)\rightarrow\mathcal{N}(0,4)$, averaged regularity prefers a
 trigonometric variance-preserving path, while Heun at NFE 8 gives lower
-$W_2$ error to the linear path. In the specified finite benchmark, 14 of 36
-path comparisons reverse the two orderings. This is evidence that averaged
+$W_2$ error to the linear path. The frozen grid has 12 geometry–solver cells, each evaluated at NFE 8, 16, and 32. Five cells contain ranking inversions, spanning 14 of the 36 paired path comparisons. This is evidence that averaged
 regularity is not, by itself, a reliable ordering surrogate under finite
 discretization.
 :::
@@ -65,13 +69,25 @@ optimization iterations, and an eight-step horizon. Both use the same detector
 and controller.
 
 ::: {.finding}
-**Main result.** On seed 0, the factored model combined an in-slice probe
-$R^2=0.997$ with 6/50 planning successes, versus $R^2=0.992$ and 2/50 for the
-monolithic model. On seed 1, both reached 2/50. The seed-0 planning difference
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/grid/g1_probe.json (world_probe.r2, manifest.config.model.img_size);
+path=results/grid/g2_probe.json (world_probe.r2, manifest.config.model.img_size);
+path=results/diagnostics/perfactor/g1_seed0.json (z_world_abs.r2, z_world_disp.r2);
+path=results/diagnostics/perfactor/g2_seed0.json (z_world_abs.r2, z_world_disp.r2);
+path=results/grid/stats_corrected_multiseed.json (per_run[config=g1/g2,seed=0/1].successes,n_episodes);
+path=results/grid/stats.json (fisher_pairs[0].p_value). -->
+**Main result.** On the 96 px g1/g2 checkpoints at seed 0, an in-slice ridge probe of absolute block pose reached $R^2=0.997$ for the factored model and $R^2=0.992$ for the monolithic model, with 6/50 and 2/50 planning successes. A displacement probe on the same checkpoints reached $R^2=0.205$ and $R^2=0.240$, reversing the probe ordering. On seed 1, both reached 2/50 planning successes. The seed-0 planning difference
 was not significant under the reported Fisher test ($p=0.269$), and the
 apparent factorization advantage did not replicate. High probe decodability
 was therefore insufficient evidence of a planning-useful representation in
 this setup.
+
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/probe/factored_cov_seed0.json (world_probe.r2, manifest.config.model.img_size);
+path=results/probe/monolithic_seed0.json (world_probe.r2, manifest.checkpoint_model_config);
+path=results/grid/g1_probe.json (manifest.config);
+path=results/grid/g2_probe.json (manifest.config). -->
+Earlier 64 px checkpoints reached absolute-pose probe $R^2=0.286$ for the factored model and $R^2=0.779$ for the monolithic model. The configurations differed from g1/g2, including auxiliary supervision.
 :::
 
 ::: {.limits}
@@ -138,11 +154,13 @@ generalization.
 ::: {.secondary-card}
 ### Learned niche selection for sycophancy probing
 
+<!-- Provenance: repository=clement-callaert/aces-sycophancy; commit=38bde0778e8bc1f7f7b882e65e3c087def0597c2;
+path=outputs/figures/compare100_lockin_diagnostics.json (condition, seed, coverage, qd_score, budget.max_share);
+path=examples/sycophancy/configs/compare_100_epsilon.json (selector.random_ratio, generations).
+Means are calculated across the two public per-seed rows, not stored mean fields. -->
 An adaptation of ACES to a grounded 12-cell sycophancy-probing domain. Over
 two seeds and 100 generations, plain Bayesian factored-ALP selection trailed
-uniform sampling in mean QD-score (9.219 versus 10.750). A preregistered
-$\varepsilon=0.2$ exploration floor recovered mean coverage to 0.917 and mean
-QD-score to 11.000, while one seed retained substantial cell concentration.
+uniform sampling in mean QD-score (9.219 versus 10.750). An $\varepsilon=0.2$ exploration floor recovered mean coverage to 0.917 and mean QD-score to 11.000, although one seed retained substantial cell concentration.
 With only two seeds, this is a diagnostic case study, not an inferential or
 publication claim.
 
@@ -165,9 +183,10 @@ pipeline. This is an implementation of published work, not an original paper.
 
 A reproducible offline-RL benchmark co-developed with Côme Genet on FI-2010.
 Across five seeds, the Decision Transformer improved over behavior cloning but
-did not beat buy-and-hold under the primary transaction-cost setting. The
-reported units are normalized feature-space PnL, and the dataset does not model
-spread, latency, queue position, or market impact.
+did not beat buy-and-hold under the primary transaction-cost setting.
+
+<!-- Provenance: repository=clement-callaert/Decision-Transformer-LOB-Trading; path=src/env/lob_trading_env.py; commit=28703506e8e6529a52209afb5ecb32030b17d007; lines=259-288 (instantaneous position changes and transaction-cost reward). -->
+The reported units are normalized feature-space PnL, and the execution model ignores spread, latency, queue position, and market impact.
 
 [Repository](https://github.com/clement-callaert/Decision-Transformer-LOB-Trading)
 :::

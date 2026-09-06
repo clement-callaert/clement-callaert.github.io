@@ -9,8 +9,8 @@ Last updated: September 2026
 
 ## A probe is not a planner
 
-A latent representation can make state variables easy to recover without being
-useful to a controller. That distinction sounds obvious, but it is easy to lose
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; path=results/grid/stats_corrected_multiseed.json; commit=ad3ad55d53bd83f44069e922f0733e080c74911b; keys=per_run[config=g1/g2,seed=0/1]. -->
+High in-slice probe scores did not establish a planning advantage for factorization in this comparison. That distinction sounds obvious, but it is easy to lose
 when a probe score is the cleanest number in an experiment.
 
 The public [Ego-World JEPA](https://github.com/clement-callaert/ego-world-sub-jepa)
@@ -27,10 +27,12 @@ contains what planning needs. A factored representation may make the story even
 more appealing: separate object-relevant components, decode state cleanly, and
 plan more effectively.
 
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=ewjepa/probing.py (linear_probe, lines 30-75);
+path=results/grid/g1_mppi.json (manifest.config.planner);
+path=results/grid/g2_mppi.json (manifest.config.planner). -->
 That chain contains a hidden jump. A probe asks whether information can be
-decoded on the sampled evaluation slice. A planner needs a model whose rollouts
-remain accurate under candidate action sequences, preserve the right geometry
-over a horizon, and induce a useful cost landscape. These are different tests.
+decoded on the sampled evaluation slice. The probe does not evaluate action-conditioned rollouts or the cost used by MPPI. These are different tests.
 
 ### The controlled comparison
 
@@ -38,7 +40,22 @@ The main comparison evaluates 50 planning episodes for each representation and
 training seed. MPPI uses 512 samples, six optimization iterations, and an
 eight-step horizon.
 
-| Model | Training seed | Probe $R^2$ | Planning successes |
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/diagnostics/perfactor/g1_seed0.json (z_world_abs.r2, z_world_disp.r2);
+path=results/diagnostics/perfactor/g2_seed0.json (z_world_abs.r2, z_world_disp.r2);
+path=results/diagnostics/perfactor/g1_seed1.json (z_world_abs.r2, z_world_disp.r2);
+path=results/diagnostics/perfactor/g2_seed1.json (z_world_abs.r2, z_world_disp.r2);
+path=results/grid/g1_probe.json (manifest.config.model.img_size);
+path=results/grid/g2_probe.json (manifest.config.model.img_size). -->
+The table reports an in-slice ridge probe of absolute block pose on the 96 px g1/g2 checkpoints. At seed 0, the displacement probe on the same checkpoints reached $R^2=0.205$ for the factored model and $R^2=0.240$ for the monolithic model, reversing the absolute-pose ordering. At seed 1, the displacement scores were $R^2=0.225$ and $R^2=0.201$, with the factored model ahead on both probes.
+
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/grid/g1_probe.json (world_probe.r2);
+path=results/grid/g2_probe.json (world_probe.r2);
+path=results/grid/seed1/g1_probe.json (world_probe.r2);
+path=results/grid/seed1/g2_probe.json (world_probe.r2);
+path=results/grid/stats_corrected_multiseed.json (per_run[config=g1/g2,seed=0/1].successes,n_episodes). -->
+| Model | Training seed | Absolute-pose probe $R^2$ | Planning successes |
 |---|---:|---:|---:|
 | Factored | 0 | 0.997 | 6 / 50 |
 | Monolithic | 0 | 0.992 | 2 / 50 |
@@ -83,12 +100,14 @@ first layer is useful evidence, but not a shortcut through the remaining three.
 
 ### The useful negative result
 
-The experiment's value is not that factorization failed once. It is that a
-plausible representation story was separated into measurable links, and the
-link from easy probing to robust control did not survive the controlled test.
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/grid/stats_corrected_multiseed.json (per_run[config=g1/g2,seed=0/1]);
+path=results/grid/stats.json (fisher_pairs[0]). -->
+The seed-0 planning advantage for factorization did not replicate at seed 1 despite high in-slice probe scores.
 That narrows the next question: evaluate representations through rollout and
 decision quality, not only through static recoverability.
 
-The complete metrics, seeds, and caveats are available in the
-[multiseed statistics](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/grid/stats_corrected_multiseed.json)
-and the project's [results manifest](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json).
+<!-- Provenance: repository=clement-callaert/ego-world-sub-jepa; commit=ad3ad55d53bd83f44069e922f0733e080c74911b;
+path=results/grid/stats_corrected_multiseed.json;
+path=results/manifest.json. -->
+The reported metrics and limitations are documented in the [multiseed statistics](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/grid/stats_corrected_multiseed.json) and the project's [results manifest](https://github.com/clement-callaert/ego-world-sub-jepa/blob/main/results/manifest.json).

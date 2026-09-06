@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  post-render:
+    - "python3 scripts/remove-draft-output.py"
   render:
     - "*.qmd"
     - "notes/*.qmd"
@@ -8,10 +10,17 @@ project:
     # Redirect stub for the note's old URL. Quarto does not copy stray .html
     # files unless they are declared as a resource.
     - "posts/probe-decoding-planning.html"
+    - "CNAME"
+    - "!_handoff/**"
+    - "!AUDIT.md"
+    - "!HEADER_REVIEW.md"
+    - "!.private/**"
+    - "!private/**"
 
 website:
+  draft-mode: gone
   title: "Clément Callaert"
-  site-url: "https://clement-callaert.github.io"
+  site-url: "https://clementcallaert.com"
   description: "Research on generative and world models under finite compute."
   favicon: assets/mark-full.svg
   search: false

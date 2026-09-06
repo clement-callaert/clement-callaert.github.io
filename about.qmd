@@ -16,35 +16,6 @@ systems built around large language models. I previously worked as a Data
 Scientist at TotalEnergies' Digital Factory. This site covers only public
 research and deliberately excludes non-public professional work.
 
-## How I approach research
-
-I am drawn to hypotheses that sound compelling but can fail in informative
-ways. My preferred workflow is to turn the hypothesis into a controlled
-protocol, compare against strong baselines, examine numerical and statistical
-failure modes, and keep the negative result when the evidence does not support
-the original story.
-
-That approach connects the public projects here: testing regularity as a
-surrogate for few-step ODE error, separating latent-state decodability from
-planning utility, and comparing learned compute allocation with simple
-stopping diagnostics. The common aim is not a broader claim than the evidence
-allows, but an experiment that another reader can inspect and challenge.
-
-## Research interests
-
-::: {.interest-grid}
-- generative models, diffusion, and flow matching;
-- world models and latent representations;
-- reinforcement learning, planning, and control;
-- scientific machine learning and numerical methods;
-- compute allocation and rigorous evaluation under finite budgets.
-:::
-
-I am especially interested in what makes generative and world models reliable
-when inference and evaluation budgets are finite, with physical dynamics as an
-eventual application. This is a research direction of interest rather than a
-claim about completed work.
-
 ## Links
 
 ::: {.profile-panel}

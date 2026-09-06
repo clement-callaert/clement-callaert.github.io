@@ -48,8 +48,9 @@ Preparatory classes in mathematics and physics
 ::: {.cv-list}
 ::: {.cv-item}
 ::: {.cv-item__head}
+<!-- Provenance: owner-supplied by Clément Callaert in the audit-application approval, 2026-09-05; confirms the MBDA apprenticeship start in September 2025 and end on 17 September 2026. No repository artifact claimed. -->
 **MBDA**
-<span>Sep. 2025–present</span>
+<span>Sep. 2025 – 17 Sep. 2026</span>
 :::
 
 *Generative AI Engineer · Apprenticeship*
@@ -83,8 +84,7 @@ technical details are intentionally excluded from this site.
   diffusion methods.
 :::
 
-See [Research](research.qmd) for questions, exact results, limitations, and
-public artifacts.
+See [Research](research.qmd) for questions, results, limitations, and public artifacts.
 
 ## Technical focus
 
