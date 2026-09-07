@@ -1,0 +1,56 @@
+# Deploys the rendered site straight to Pages as a build artifact.
+#
+# The legacy branch builder cannot be used here: on a <user>.github.io repo it
+# insists on the default branch, so a gh-pages source silently reverts to main
+# and Jekyll serves README.md as the home page. Building in a workflow removes
+# the branch from the question entirely.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half-published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # _quarto.yml runs scripts/remove-draft-output.py as a post-render step.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - run: quarto render
+
+      # Belt and braces: the artifact path is served as-is, but this keeps the
+      # output safe if it is ever served through the Jekyll path again.
+      - run: touch _site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
