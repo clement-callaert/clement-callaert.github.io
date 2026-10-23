@@ -1,25 +1,61 @@
 ---
 title: "About"
-description: "Background, research interests, and working principles."
+description: "Background and interests."
 ---
 
+<!-- Provenance: owner-supplied, 2026-10-05 and 2026-10-23: career facts as on the CV page; interests and reading list from the owner's own statements and reading plan. No research artifact claimed. -->
+
 ::: {.page-lead}
-I work at the intersection of generative modeling, latent world models,
-reinforcement learning, and numerical methods, with the aim of building
+I work on world models and generative modeling, with the aim of building
 general-purpose robots that learn and adapt in real settings. I completed the
 M2 Mathematics and Artificial Intelligence at Université Paris-Saclay in 2026,
 and the coursework of CentraleSupélec's Engineering Degree in Mathematics and
-Data Science, which is conferred after the December 2026 jury.
+Data Science.
 :::
 
 From January 2027, I join Yuejiang Liu's LEMA group at the National University
-of Singapore for a six-month research position in robot learning.
+of Singapore for a six-month research position in robot learning. Before that,
+I worked as an apprentice: Generative AI Engineer at MBDA from 2025 to 2026,
+and Data Scientist at TotalEnergies' Digital Factory from 2023 to 2025, on
+electric-vehicle charging. This site covers only public research and
+deliberately excludes non-public professional work.
 
-From September 2025 to September 2026, alongside my studies, I worked as a
-Generative AI Engineer at MBDA on multi-agent systems built around large
-language models. I previously worked as a Data Scientist at TotalEnergies'
-Digital Factory. This site covers only public research and deliberately
-excludes non-public professional work.
+## Outside research
+
+Most of my free time goes to history and geopolitics. I like the periods when
+energy, industry and logistics changed what a country could do: the Industrial
+Revolution, the Second World War as a contest of production, the Cold War, the
+globalization of supply chains. I also read about strategy and the defense
+industry, from Clausewitz to the Cold War.
+
+Economics and finance come with it: growth, money and markets decide what gets
+built and where. I like to understand how a price actually forms in a market,
+and how capital moves between industries and countries.
+
+Physics is the other side. I studied quantum and materials physics at
+CentraleSupélec, and I still follow quantum mechanics and the physics of
+semiconductors, the layer under every chip.
+
+I follow politics through institutions: how a decision is actually made, and
+who pays for it. I think about ecology the same way, as a system with physical
+limits that reacts to what we do.
+
+### Books
+
+Chris Miller, *Chip War*; Zbigniew Brzezinski, *The Grand Chessboard*; Carl von
+Clausewitz, *On War*; Cédric Villani, *Birth of a Theorem*; Frank Herbert,
+*Dune* and *Dune Messiah*; William Gibson, *Neuromancer*.
+
+### Films and series
+
+- Machines and minds: *WALL·E*, *Interstellar*, *2001: A Space Odyssey*,
+  *Ghost in the Shell*, *Gattaca*.
+- Resources, industry and nature: *Dune* and *Dune: Part Two*, *Princess
+  Mononoke*, *Once Upon a Time in the West*, *The Wind Rises*.
+- Power and systems: *Chernobyl*, *Dr. Strangelove*, *The Hunt for Red
+  October*, *The Big Short*.
+
+I also play chess, around 1750 on chess.com.
 
 ## Links
 

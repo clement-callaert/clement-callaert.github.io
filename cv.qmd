@@ -12,10 +12,7 @@ description: "Education, experience, research projects, and selected responsibil
 <span>2023–2026</span>
 :::
 
-<!-- Provenance: owner-supplied, 2026-10-23, as on the current CV: master's-level engineering degree, conferred after the December 2026 jury; coursework completed. -->
-Engineering Degree (Diplôme d'Ingénieur), Mathematics and Data Science\
-Master's-level degree, to be conferred after the December 2026 jury; coursework
-completed
+Engineering Degree (Diplôme d'Ingénieur), Mathematics and Data Science
 :::
 
 ::: {.cv-item}
@@ -26,7 +23,7 @@ completed
 
 <!-- Provenance: owner-supplied certificate of achievement and transcript, Université Paris-Saclay, 1 October 2026 ("mention Bien", "with High Honors" in the official English version, 14.76/20, 60 ECTS). -->
 Master 2 (M2), Mathematics and Artificial Intelligence\
-Mention Bien ("High Honors" on the official certificate), 14.76/20
+Mention Bien ("High Honors"), 14.76/20
 :::
 
 ::: {.cv-item}
@@ -35,7 +32,7 @@ Mention Bien ("High Honors" on the official certificate), 14.76/20
 <span>2025</span>
 :::
 
-Exchange in AI for Engineering, Beijing
+Exchange semester, AI for engineering
 :::
 
 ::: {.cv-item}
@@ -44,8 +41,7 @@ Exchange in AI for Engineering, Beijing
 <span>2021–2023</span>
 :::
 
-Preparatory classes (CPGE) in mathematics and physics, Bachelor's level,
-120 ECTS
+Preparatory classes (CPGE), mathematics and physics, Bachelor's level
 :::
 :::
 
@@ -71,9 +67,7 @@ Preparatory classes (CPGE) in mathematics and physics, Bachelor's level,
 
 *Generative AI Engineer · Apprenticeship*
 
-Developed and evaluated multi-agent systems built around large language models;
-deployed self-hosted models with vLLM and Docker on GPUs. Non-public technical
-details are intentionally excluded from this site.
+Multi-agent systems built around large language models.
 :::
 
 ::: {.cv-item}
@@ -85,9 +79,8 @@ details are intentionally excluded from this site.
 
 *Data Scientist · Apprenticeship*
 
-Built a pricing model for electric-vehicle charging transactions and a
-classification model for public-station accessibility, using Python, AWS, and
-Databricks.
+Models for electric-vehicle charging: pricing, and which stations are open to
+the public.
 :::
 :::
 
@@ -119,11 +112,9 @@ experimentation in Python and PyTorch.
 
 ## Service, teaching, and leadership
 
-- Reviewer, NeurIPS 2026 Workshop on Geometric Distributional Deep Learning
-  (GDDL).
-- Delivered practical workshops on neural networks, Transformers, diffusion
-  models, and reinforcement learning with the training team of Automatants,
-  CentraleSupélec's AI association (Oct. 2024 – Nov. 2025).
+- Reviewer, NeurIPS 2026 GDDL workshop.
+- Practical AI workshops with Automatants, CentraleSupélec's AI association
+  (2024–2025).
 - Led a six-person team running network infrastructure for 450+ members as
   president of Rézo Metz-Rennes Fédérés.
 

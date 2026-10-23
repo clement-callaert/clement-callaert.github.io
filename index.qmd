@@ -29,6 +29,9 @@ latent world models for planning, and how these behave when the sampling
 budget is small. I want these methods to end up in general-purpose robots that
 keep adapting in real settings.
 
+Outside research, I read history, geopolitics, economics and physics; more on
+the [about page](about.qmd).
+
 <!-- Provenance: owner-supplied by Clément Callaert in the audit-application approval, 2026-09-05; autobiographical statement, no research artifact claimed. -->
 The projects below are personal work, not lab research.
 Each has a public repository, a short report, and an explicit note on what the
@@ -50,8 +53,7 @@ Sole author. Accepted as a poster at the NeurIPS 2026 GDDL workshop, which is
 non-archival.
 
 [code](https://github.com/clement-callaert/fewstep-field-regularity) ·
-[manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf) ·
-[audit](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/audit/CLAIM_EVIDENCE_MATRIX.md)
+[manuscript](https://github.com/clement-callaert/fewstep-field-regularity/blob/main/paper/arxiv/main.pdf)
 
 [Two more on the [research page](research.qmd), with methods and limitations
 in full.]{.muted}
