@@ -8,20 +8,25 @@ description: "Education, experience, research projects, and selected responsibil
 ::: {.cv-list}
 ::: {.cv-item}
 ::: {.cv-item__head}
-**Université Paris-Saclay**
-<span>2025–2026</span>
-:::
-
-Research Master's (M2), Mathematics and Artificial Intelligence
-:::
-
-::: {.cv-item}
-::: {.cv-item__head}
 **CentraleSupélec**
 <span>2023–2026</span>
 :::
 
-Engineering Degree, specialization in Mathematics and Data Science
+<!-- Provenance: owner-supplied, 2026-10-23, as on the current CV: master's-level engineering degree, conferred after the December 2026 jury; coursework completed. -->
+Engineering Degree (Diplôme d'Ingénieur), Mathematics and Data Science\
+Master's-level degree, to be conferred after the December 2026 jury; coursework
+completed
+:::
+
+::: {.cv-item}
+::: {.cv-item__head}
+**Université Paris-Saclay**
+<span>2025–2026</span>
+:::
+
+<!-- Provenance: owner-supplied certificate of achievement and transcript, Université Paris-Saclay, 1 October 2026 ("mention Bien", "with High Honors" in the official English version, 14.76/20, 60 ECTS). -->
+Master 2 (M2), Mathematics and Artificial Intelligence\
+Mention Bien ("High Honors" on the official certificate), 14.76/20
 :::
 
 ::: {.cv-item}
@@ -30,7 +35,7 @@ Engineering Degree, specialization in Mathematics and Data Science
 <span>2025</span>
 :::
 
-Academic exchange
+Exchange in AI for Engineering, Beijing
 :::
 
 ::: {.cv-item}
@@ -39,13 +44,24 @@ Academic exchange
 <span>2021–2023</span>
 :::
 
-Preparatory classes in mathematics and physics
+Preparatory classes (CPGE) in mathematics and physics, Bachelor's level,
+120 ECTS
 :::
 :::
 
 ## Experience
 
 ::: {.cv-list}
+::: {.cv-item}
+::: {.cv-item__head}
+<!-- Provenance: owner-supplied, 2026-10-23: invitation from the NUS School of Computing (January to June 2027, supervisor Yuejiang Liu), described in the wording of the current CV. -->
+**National University of Singapore, LEMA group (Yuejiang Liu)**
+<span>From Jan. 2027</span>
+:::
+
+*Incoming · six-month research position in robot learning*
+:::
+
 ::: {.cv-item}
 ::: {.cv-item__head}
 <!-- Provenance: owner-supplied by Clément Callaert in the audit-application approval, 2026-09-05; confirms the MBDA apprenticeship start in September 2025 and end on 17 September 2026. No repository artifact claimed. -->
@@ -55,17 +71,23 @@ Preparatory classes in mathematics and physics
 
 *Generative AI Engineer · Apprenticeship*
 
-Work on multi-agent systems built around large language models. Non-public
-technical details are intentionally excluded from this site.
+Developed and evaluated multi-agent systems built around large language models;
+deployed self-hosted models with vLLM and Docker on GPUs. Non-public technical
+details are intentionally excluded from this site.
 :::
 
 ::: {.cv-item}
 ::: {.cv-item__head}
+<!-- Provenance: owner-supplied end date (31 August 2025), declared 2026-10-05; description as on the current CV. -->
 **TotalEnergies Digital Factory**
-<span>Nov. 2023–Sep. 2025</span>
+<span>Nov. 2023 – Aug. 2025</span>
 :::
 
 *Data Scientist · Apprenticeship*
+
+Built a pricing model for electric-vehicle charging transactions and a
+classification model for public-station accessibility, using Python, AWS, and
+Databricks.
 :::
 :::
 
@@ -73,7 +95,8 @@ technical details are intentionally excluded from this site.
 
 ::: {.cv-projects}
 - **Few-Step Field Regularity:** exact Gaussian analysis of probability paths,
-  field regularity, and finite-step numerical error.
+  field regularity, and finite-step numerical error. Sole author; accepted as a
+  poster at the NeurIPS 2026 GDDL workshop (non-archival).
 - **Ego-World JEPA:** action-conditioned latent world models and MPPI planning
   on PushT, with a documented negative result.
 - **Adaptive Latent Search:** learned and heuristic stopping rules for
@@ -94,11 +117,19 @@ reinforcement learning and planning; numerical evaluation; reproducible
 experimentation in Python and PyTorch.
 :::
 
-## Teaching and service
+## Service, teaching, and leadership
 
-- Delivered practical artificial-intelligence workshops with Automatants.
+- Reviewer, NeurIPS 2026 Workshop on Geometric Distributional Deep Learning
+  (GDDL).
+- Delivered practical workshops on neural networks, Transformers, diffusion
+  models, and reinforcement learning with the training team of Automatants,
+  CentraleSupélec's AI association (Oct. 2024 – Nov. 2025).
 - Led a six-person team running network infrastructure for 450+ members as
   president of Rézo Metz-Rennes Fédérés.
+
+## Languages
+
+French (native) · English (professional)
 
 ## Public profiles
 

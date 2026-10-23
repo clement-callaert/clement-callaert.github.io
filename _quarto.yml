@@ -21,7 +21,7 @@ website:
   draft-mode: gone
   title: "Clément Callaert"
   site-url: "https://clementcallaert.com"
-  description: "Research on generative and world models under finite compute."
+  description: "Research on world models and generative modeling under finite compute, moving toward robot learning."
   favicon: assets/mark-full.svg
   search: false
   open-graph: true
